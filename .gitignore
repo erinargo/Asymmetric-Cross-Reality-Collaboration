@@ -14,6 +14,9 @@
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
+# OTHER VCs
+*.plastic
+
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
