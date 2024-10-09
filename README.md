@@ -209,7 +209,8 @@ strict and often confusing rules. Outlined below are a list of things to keep in
       // Ownership of GameObject attached to not required to call this RPC method. 
       [ServerRpc(RequireOwnership = false)] // This needs to be declared.
       // Name of function must end with ServerRpc
-      public void SetWinnerServerRpc(ulong clientId, ServerRpcParams serverRpcParams = default) { // ServerRpcParams must be declared.
+      public void SetWinnerServerRpc(ulong clientId, ServerRpcParams serverRpcParams = default) { 
+    // ServerRpcParams must be declared.
         WinnerClientId = clientId;
       }
       ...
