@@ -1,4 +1,0 @@
-repository "IEEE VR 2025@IEEEVR2025@cloud"
-  path "/"
-    br "/main"
-    co "/main"
