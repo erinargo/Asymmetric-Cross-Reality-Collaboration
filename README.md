@@ -13,9 +13,12 @@ The most important thing to remember about NetCode is that the p2p connection cr
 strict and often confusing rules. Outlined below are a list of things to keep in mind when implementing changes to a multiplayer game:
 
 1. Each instance of any game client is a single player instance of the multiplayer game 
+
    2. What does this mean?
+   
    3. Each client has a local copy of all game objects and scripts, we introduce multiplayer when we sync specific game objects with
    special multiplayer scripts across the network
+   
    4. Unity classifies a singleplayer script as MonoBehaviour which your script will derive from
       5. E.g.  
       ```C#
