@@ -24,17 +24,17 @@ strict and often confusing rules. Outlined below are a list of things to keep in
        // Blah
       }
       ```
-   5. Unity classifies a multiplayer script as a NetworkBehaviour which your script will derive from
-      6. E.g.
+   6. Unity classifies a multiplayer script as a NetworkBehaviour which your script will derive from
+      7. E.g.
       ```C#
       public class YourClass : NetworkBehaviour
       {
        // Blah
       }
       ```
-4. NetworkObjects
-   5. Any gameobject that has a script attached to it that derives from NetworkBehaviour also needs a NetworkObject script attached to it as well
-      6. Unity provides this NetworkObject Script for you. If you don't add it before attaching a NetworkBehaviour derived script, don't worry, the editor will tell you.
+8. NetworkObjects
+   9. Any gameobject that has a script attached to it that derives from NetworkBehaviour also needs a NetworkObject script attached to it as well
+      10. Unity provides this NetworkObject Script for you. If you don't add it before attaching a NetworkBehaviour derived script, don't worry, the editor will tell you.
    7. Any gameobject with a NetworkObject script attached to it has to be added to the network prefabs list. Usually, this is done automatically for you but not always. 
    8. $${\color{red}!!!!!!!!!PAY ATTENTION!!!!!!!!!}$$
       9. YOU WILL EXPERIENCE TERRIBLE AND MIND BOGGLING BUGS IF YOU DO NOT ADD A NETWORKOBJECT TO THE NETWORK PREFAB LIST. 
