@@ -2,6 +2,12 @@
 Clone to directory. Then, in UnityHub, Add -> ${dir} -> Select root folder. 
 Should start importing all dependencies automatically.
 
+# Code Style
+
+# Version Control
+Work in branches. Create a new branch for each new feature. Each branch should have the name of the programmer, name of feature, and date.
+Submit for review and ping either Dr. Grandi or Erin for approval.
+
 # Helpful Links
 ## Getting Started with NetCode for GameObjects
 Unity Docs: https://docs-multiplayer.unity3d.com/netcode/current/about/
@@ -255,5 +261,30 @@ public class GameManager : NetworkBehaviour {
 }
 ```
 
-## OVR
-I will write this later.
+## OVR (A Brief Letter)
+The OVR Plugin allows us to interface with meta's hardware. It allows us to read input from not only the headset itself, the controllers, but also 
+hand tracking which allows us to create unique and novel interactions. 
+
+This used to be much more finnicky and the current tutorials online reflect the old versions of OVR which all required different setup.
+Fortunately, through much refactoring on Meta's part as well as some benevolence from yours truly, this setup has been streamlined for ease of use.
+Let Erin know if you need any specific documentation or have any concerns on how to do something. 
+
+## CameraRig
+The main viewport for our players. Has some multiplayer implications so let Erin handle setup. If you have questions about how this is done, 
+what considerations are involved, and how to set up the CameraRig in general please message Erin.
+
+The rig will be located in Universal Prefabs -> Cameras -> OVRInteractionRig
+
+## Interaction
+Many kinds, the most basic of which are pinch, poke, and grab. Fortunately, the plugin handles these distinctions for us so we can 
+focus on implementing features. 
+
+### Getting Started
+
+The Camera Rig will already have properly configured interactors on it. If for whatever reason they stop working please message Erin. 
+To add interaction to a game object, fortunately, has been made easier with recent versions of Unity. Right-click on the object, 
+navigate through Interaction SDK -> add whatever interaction you want.
+You have more options past this for specific interaction settings on these scripts. 
+
+## Locomotion
+Broad category and is best discussed as a team so we can choose a style that best fits our game.
