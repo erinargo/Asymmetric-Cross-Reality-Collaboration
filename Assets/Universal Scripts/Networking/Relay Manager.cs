@@ -1,61 +1,70 @@
 using System.Collections.Generic;
 using System.Collections;
+using System.Threading.Tasks;
+
 using UnityEngine;
+
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
+
 using Unity.Netcode;
 using Unity.Networking.Transport.Relay;
 using Unity.Netcode.Transports.UTP;
-using UnityEngine.SceneManagement;
-using TMPro;
 
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 
-using System.Threading.Tasks;
-
 /**
- * TODO, ERIN:
- * Cleanup + move menu logic to other scripts
+ * Connects to Relay Service
+ * 
+ * Quick Rundown on Relay:
+ * P2P service offered by Unity
+ * Allows us to use Netcode and the Network Manager to create a multiplayer experience without having
+ * to host servers
+ *
+ * +Singleton is used for exposing relaymanager gameobject as an interface
+ * -joinCode is used for connecting clients to the correct lobby
+ * -maxPlayers is used to control how many clients can connect to the lobby
  */
-
 public class RelayManager : MonoBehaviour
 {
     public static RelayManager Singleton { get; private set; }
-    private static string joinCode;
+    private string _lobbyId;
+    private static string _joinCode;
+    
+    [SerializeField]
+    private int maxPlayers = 3;
 
-    [SerializeField] private string hostScreen = "Host";
-    [SerializeField] private string mainMenu = "MMenu";
-    [SerializeField] private string clientScreen = "Join";
-    [SerializeField] private string loadingScreen = "Loading";
-    [SerializeField] public string gameplayScene = "Start";
-    [SerializeField] private TMP_Text joinCodeContainer;
-    private bool hosting = false;
-    private bool joined = false;
-    private bool started = false;
-    private string previousScreen;
-
-    public string JoinCode => joinCode;
-
-    private string lobbyId;
-
+    // Exposes joinCode;
+    public string JoinCode => _joinCode;
+    
+    // Exposes maxPlayers;
+    public int MaxPlayers => maxPlayers;
+    
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
-
+    
+    /**
+     * -Awake(): Void
+     * ; Inits Class
+     */
+    
     void Awake() {
         if (Singleton != null && Singleton != this) Destroy(this.gameObject);
         else Singleton = this;
     }
 
-    void Update() {
-        if (SceneManager.GetActiveScene().name == "Host") joinCodeContainer = GameObject.Find("JoinCode").GetComponent<TMP_Text>();
-        if (joinCodeContainer != null) joinCodeContainer.text = "Join Code: " + joinCode;
-    }
-
+    /**
+     * -Start(): Void
+     * ; DontDestroyOnLoad (Persists between Scenes)
+     * ; Connects to UnityServices
+     * ; Signs in Individual Client
+     */
+    
     async void Start() {
         DontDestroyOnLoad(this.gameObject);
-        await UnityServices.InitializeAsync(); // JAVASCRIPT HAS COME TO BITE ME IN THE ASS . . . AGAIN. FML.
+        await UnityServices.InitializeAsync(); 
 
         AuthenticationService.Instance.SignedIn += () => {
             Debug.Log("Signed in " + AuthenticationService.Instance.PlayerId);
@@ -64,12 +73,19 @@ public class RelayManager : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
+    /**
+     * +Host(): Void
+     * ; Inits Connection Criteria
+     * ; Starts Lobby
+     * ; Populates ClientData
+     */
+    
     public async void Host() {
         try {
             NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
             NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
             Allocation allocation = await RelayService.Instance.CreateAllocationAsync(2);
-            joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+            _joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
             RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
@@ -81,13 +97,13 @@ public class RelayManager : MonoBehaviour
                     {
                         "JoinCode", new DataObject( 
                             visibility: DataObject.VisibilityOptions.Member,
-                            value: joinCode
+                            value: _joinCode
                         )
                     }
                 };
 
-                Lobby lobby = await Lobbies.Instance.CreateLobbyAsync("Game", 13, createLobbyOption);
-                lobbyId = lobby.Id;
+                Lobby lobby = await Lobbies.Instance.CreateLobbyAsync("lobbyName", 2, createLobbyOption);
+                _lobbyId = lobby.Id;
 
                 StartCoroutine(HeartBeat(15f));
             }
@@ -95,41 +111,49 @@ public class RelayManager : MonoBehaviour
                 Debug.Log(e);
                 throw;
             }
+            
+            Debug.Log("Lobby Code: " + _lobbyId);
 
             // END LOBBY
             ClientData = new Dictionary<ulong, ClientData>();
             NetworkManager.Singleton.StartHost();
-            
-            hosting = true;
-
-            previousScreen = "MMenu";
         } catch(RelayServiceException e) {
             Debug.LogError(e);
         }
         
     }
-
-    private bool ErinLovesAdam() {
-        return true;
-    }
-
+    
+    /**
+     * -HeartBeat(timeSecs: float): IEnumerator
+     * ; Pings Relay Service to Keep Connection Awake
+     * ; Ah ah ah ah stayin' alive
+     * ; stayin' alive
+     */
     IEnumerator HeartBeat(float timeSecs) {
         var delay = new WaitForSeconds(timeSecs);
 
-        while (ErinLovesAdam()) {
-            Lobbies.Instance.SendHeartbeatPingAsync(lobbyId);
+        while (true) {
+            Lobbies.Instance.SendHeartbeatPingAsync(_lobbyId);
             yield return delay;
         }
     }
 
+    /**
+     * -OnNetworkReady(): Void
+     * ; Callback for Network Init
+     * ; Assigns Client Connection and Disconnection Callbacks 
+     */
     private void OnNetworkReady() {
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnect;
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnect;
-            NetworkManager.Singleton.SceneManager.LoadScene(hostScreen, LoadSceneMode.Single);
     }
-
+    
+    /**
+     * -ApprovalCheck(request: ConnectionApprovalRequest, response: ConnectionApprovalResponse): Void
+     * ; Checks if client is allowed to join lobby
+     */
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response) {
-        if(ClientData.Count > 13 || started) {
+        if(ClientData.Count > maxPlayers) {
             response.Approved = false;
             return;
         }
@@ -141,72 +165,61 @@ public class RelayManager : MonoBehaviour
         ClientData[request.ClientNetworkId] = new ClientData(request.ClientNetworkId);
     }
 
-    public void Join() {
-        SceneManager.LoadScene(clientScreen, LoadSceneMode.Single);
-        hosting = false;
-
-        previousScreen = "MMenu";
-    }
-
+    /**
+     * +JoinRelay(join: String) Void
+     * ; Joins a Lobby using the join code
+     * ; NOTE: this join code is automatically populated by the lobby service
+     */
     public async Task JoinRelay(string join) {
-        joinCode = join.Substring(0, 6); // Relay, TMP? 
-        JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+        _joinCode = join.Substring(0, 6);
+        JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(_joinCode);
 
         RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
 
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-        if(!started) NetworkManager.Singleton.StartClient();
-
-        joined = true;
+        NetworkManager.Singleton.StartClient();
     }
 
-    public void MainMenu() {
-        Debug.Log("Main Menu Called");
+    /**
+     * -ShutDown(): Void
+     * ; safely closes connection before disconnect and application quit
+     */
+    private void ShutDown() {
         NetworkManager.Singleton.Shutdown();
         Destroy(NetworkManager.Singleton.gameObject);
-        SceneManager.LoadScene(mainMenu, LoadSceneMode.Single);
-
-        hosting = false;
-        joined = false;
+        // Properly DC?
     }
 
+    /**
+     * +Quit(): Void
+     * ; Closes Application
+     */
     public void Quit() {
-        if (NetworkManager.Singleton != null) NetworkManager.Singleton.Shutdown();
+        ShutDown();
 
         Application.Quit();
     }
 
-    public void Back() {
-        if (hosting || joined) {
-
-            // TODO: Kick everyone in Lobby
-            NetworkManager.Singleton.Shutdown();
-            if (hosting) {
-                NetworkManager.Singleton.SceneManager.LoadScene(previousScreen, LoadSceneMode.Single);
-                Destroy(NetworkManager.Singleton.gameObject);
-            } else {
-                Destroy(NetworkManager.Singleton.gameObject);
-                SceneManager.LoadScene(previousScreen, LoadSceneMode.Single);
-            }
-
-            hosting = false;
-            joined = false;
-        }
-        else {
-            SceneManager.LoadScene(previousScreen, LoadSceneMode.Single);
-        }
-    }
-
+    /**
+     * +OnClientDisconnect(clientId: ulong): Void
+     * ; Removes client data from ClientData
+     */
     public void OnClientDisconnect(ulong clientId) {
         if (ClientData.ContainsKey(clientId)) {
             ClientData.Remove(clientId); //Debug.Log($"Removed ClientId {clientId}");
         }
     }
 
+    
+    /**
+     * +OnClientConnect(clientId: ulong): Void
+     * ; Populates ClientData with client data
+     */
     public void OnClientConnect(ulong clientId) {
         ClientData[clientId] = new ClientData(clientId);
     }
 
+    /** Character Selection Code; Not necessary yet.
     public void SetCharacter(ulong clientId, int characterId) {
         if (ClientData.TryGetValue(clientId, out ClientData data)) {
             data.CharacterId = characterId;
@@ -217,7 +230,14 @@ public class RelayManager : MonoBehaviour
         if(ClientData.TryGetValue(clientId, out ClientData data)) return data.CharacterId;
         return -1;
     }
+    */
 
+    /**
+     * +GetAllPlayers(): List<ClientData>
+     * ; returns a list of clients
+     * ; ClientData: ClientId
+     * ; // MORE DATA WILL BE ADDED TO CLIENT DATA AS NEEDED BY GAME;
+     */
     public List<ClientData> GetAllPlayers() {
         List<ClientData> players = new List<ClientData>();
 
@@ -226,9 +246,5 @@ public class RelayManager : MonoBehaviour
         }
 
         return players;
-    }
-
-    public void StartGame() { 
-        NetworkManager.Singleton.SceneManager.LoadScene(gameplayScene, LoadSceneMode.Single);
     }
 }
