@@ -7,24 +7,27 @@ using Unity.Services.Lobbies.Models;
 
 using System.Threading.Tasks;
 
+/**
+ * LobbyList handles Populating a Lobby List UI and Handles Joining a Game
+ */
 public class LobbyList : MonoBehaviour {
-    [SerializeField] private LobbyItem _lobbyItemPrefab;
+    [SerializeField] private LobbyItem lobbyItemPrefab;
     [SerializeField] private Transform lobbyItemParent;
     
-    private bool isRefreshing;
-    private bool isJoining;
+    private bool _isRefreshing;
+    private bool _isJoining;
     
     private void OnEnable() {
         RefreshList();
     }
 
     public async void RefreshList() {
-        if (isRefreshing) return;
-        isRefreshing = true;
+        if (_isRefreshing) return;
+        _isRefreshing = true;
 
         try {
             var options = new QueryLobbiesOptions();
-            options.Count = 25;
+            options.Count = 2;
 
             options.Filters = new List<QueryFilter>() {
                 new QueryFilter(
@@ -46,22 +49,22 @@ public class LobbyList : MonoBehaviour {
             }
 
             foreach (Lobby lobby in lobbies.Results) {
-                var lobbyInstance = Instantiate(_lobbyItemPrefab, lobbyItemParent);
+                var lobbyInstance = Instantiate(lobbyItemPrefab, lobbyItemParent);
                 lobbyInstance.Init(this, lobby);
             }
         }
         catch(LobbyServiceException e) {
             Debug.Log(e);
-            isRefreshing = false;
+            _isRefreshing = false;
             throw;
         }
 
-        isRefreshing = false;
+        _isRefreshing = false;
     }
     
     public async void JoinAsync(Lobby lobby) {
-        if (isJoining) return;
-        isJoining = true;
+        if (_isJoining) return;
+        _isJoining = true;
 
         try {
             var joiningLobby = await Lobbies.Instance.JoinLobbyByIdAsync(lobby.Id);
@@ -76,6 +79,6 @@ public class LobbyList : MonoBehaviour {
             throw;
         }
 
-        isJoining = false;
+        _isJoining = false;
     }
 }

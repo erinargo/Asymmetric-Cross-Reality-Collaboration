@@ -6,10 +6,10 @@ using UnityEngine;
 [Serializable]
 public class ClientData {
     public ulong ClientId;
-    public int CharacterId;
+    // public int CharacterId;
 
     public ClientData(ulong clientId, int characterId = -1) { 
         this.ClientId = clientId;
-        this.CharacterId = characterId;
+        // this.CharacterId = characterId;
     }
 }

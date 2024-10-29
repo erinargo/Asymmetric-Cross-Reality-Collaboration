@@ -7,6 +7,9 @@ using TMPro;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 
+/**
+ * Custom GameObject
+ */
 public class LobbyItem : MonoBehaviour {
     [SerializeField] private TMP_Text name;
     [SerializeField] private TMP_Text capacity;
