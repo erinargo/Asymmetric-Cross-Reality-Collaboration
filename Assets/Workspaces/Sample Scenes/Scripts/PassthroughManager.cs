@@ -16,6 +16,9 @@ public class PassthroughManager : MonoBehaviour
 
     [SerializeField] private GameObject[] selectiveElements;
     [SerializeField] private GameObject[] disableOnPassthrough;
+
+    [SerializeField] private bool toggle;
+    private bool toggleSet;
     
     // BEGIN Example Code Only
     [Space] 
@@ -29,7 +32,17 @@ public class PassthroughManager : MonoBehaviour
         else Singleton = this;
     }
 
+    void Update()
+    {
+        if (toggle != toggleSet)
+        {
+            Toggle();
+            toggleSet = toggle;
+        }
+    }
+
     public void Toggle()
+    
     {
         Camera centerCamera = rig.centerEyeAnchor.GetComponent<Camera>();
         
