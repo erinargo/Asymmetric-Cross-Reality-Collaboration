@@ -12,43 +12,21 @@ public class Portal : MonoBehaviour
     [SerializeField] private Transform orangePortal;
     [Space]
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private OVRCameraRig ovrCameraRig;
     [Space]
     [SerializeField] private Material bluePortalMaterial;
     [SerializeField] private Material orangePortalMaterial;
     [Space]
     [SerializeField] private bool AR_VR;
     
-    
-    // Rotation limits
-    public float pitchMin = 0; // Minimum pitch (look down)
-    public float pitchMax = 0;  // Maximum pitch (look up)
-    public float yawMin = 0;   // Minimum yaw (look left)
-    public float yawMax = 175f;    // Maximum yaw (look right)
-    
     // TEMPORARY SERIALIZABLE, ACTUAL IMPLEMENTATION TBD
     [SerializeField] private GameObject cameraRig;
 
+    
+    
     void Awake()
     {
-        if (bluePortalCamera.targetTexture != null)
-        {
-            bluePortalCamera.targetTexture.Release();
-        }
         
-        bluePortalCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        bluePortalCamera.targetTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
-        
-        if (orangePortalCamera.targetTexture != null)
-        {
-            orangePortalCamera.targetTexture.Release();
-        }
-        
-        orangePortalCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-        bluePortalCamera.targetTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
-        
-        // Blue portal displays what orange can see and vice versa
-        bluePortalMaterial.mainTexture = orangePortalCamera.targetTexture;
-        if(!AR_VR) orangePortalMaterial.mainTexture = bluePortalCamera.targetTexture;
     }
     
     void ClampCameraPosition(Transform portal, Camera portalCamera)
@@ -65,40 +43,67 @@ public class Portal : MonoBehaviour
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
-        Quaternion adjustedRotation = 
-            Quaternion.Euler(
-                mainCamera.transform.eulerAngles.x, 
-                mainCamera.transform.eulerAngles.y, 
-                mainCamera.transform.eulerAngles.z
-            );
+        if (bluePortalCamera.targetTexture != null)
+        {
+            bluePortalCamera.targetTexture.Release();
+        }
         
-        // Adjust Projection Matrix
-        float FOV = mainCamera.fieldOfView;
-        float aspectRatio = mainCamera.aspect;
+        bluePortalCamera.targetTexture = 
+            new RenderTexture(
+                ovrCameraRig.leftEyeCamera.pixelWidth, 
+                ovrCameraRig.leftEyeCamera.pixelHeight, 
+                24);
         
-        bluePortalCamera.fieldOfView = FOV;
-        orangePortalCamera.fieldOfView = FOV;
+        if (orangePortalCamera.targetTexture != null)
+        {
+            orangePortalCamera.targetTexture.Release();
+        }
         
+        orangePortalCamera.targetTexture = 
+            new RenderTexture(
+                ovrCameraRig.leftEyeCamera.pixelWidth, 
+                ovrCameraRig.leftEyeCamera.pixelHeight, 
+                24);
+        
+        // Blue portal displays what orange can see and vice versa
+        bluePortalMaterial.mainTexture = orangePortalCamera.targetTexture;
+        if(!AR_VR) orangePortalMaterial.mainTexture = bluePortalCamera.targetTexture;
+        
+        float aspectRatio = 
+            ovrCameraRig.leftEyeCamera.pixelWidth / (float) ovrCameraRig.leftEyeCamera.pixelHeight;
+        float FOV = ovrCameraRig.leftEyeCamera.fieldOfView;
+
         bluePortalCamera.aspect = aspectRatio;
         orangePortalCamera.aspect = aspectRatio;
+
+        bluePortalCamera.fieldOfView = FOV;
+        orangePortalCamera.fieldOfView = FOV;
+
+        Matrix4x4 customProjectionMatrix = ovrCameraRig.leftEyeCamera.projectionMatrix;
         
-        Matrix4x4 projectionMatrix = mainCamera.projectionMatrix;
+        bluePortalCamera.projectionMatrix = customProjectionMatrix;
+        orangePortalCamera.projectionMatrix = customProjectionMatrix;
         
-        bluePortalCamera.projectionMatrix = projectionMatrix;
-        orangePortalCamera.projectionMatrix = projectionMatrix;
+        Quaternion adjustedRotation = 
+            Quaternion.Euler(
+                0, 
+                0, 
+                mainCamera.transform.eulerAngles.z
+            );
+
         
         // Blue Camera
 
         Vector3 relativePositionToOrangePortal = orangePortal.InverseTransformPoint(mainCamera.transform.position);
-        relativePositionToOrangePortal = Vector3.Scale(relativePositionToOrangePortal, new Vector3(-0.5f, 0, 0.01f));
+        relativePositionToOrangePortal = Vector3.Scale(relativePositionToOrangePortal, new Vector3(-0.1f, -1, 0.01f));
         bluePortalCamera.transform.position = bluePortal.TransformPoint(relativePositionToOrangePortal);
         
         ClampCameraPosition(bluePortal, bluePortalCamera);
         
         Vector3 relativeRotationToBluePortal = orangePortal.InverseTransformDirection(mainCamera.transform.forward);
-        relativeRotationToBluePortal = Vector3.Scale(relativeRotationToBluePortal, new Vector3(0, 0, -0.01f));
+        relativeRotationToBluePortal = Vector3.Scale(relativeRotationToBluePortal, new Vector3(1, 1, -1));
         bluePortalCamera.transform.forward = bluePortal.TransformDirection(relativeRotationToBluePortal);
         
         // Adjust rotation to move opposite to main camera z to give the illusion of being still
@@ -108,7 +113,7 @@ public class Portal : MonoBehaviour
         // Orange Camera
 
         Vector3 relativePositionToBluePortal = bluePortal.InverseTransformPoint(mainCamera.transform.position);
-        relativePositionToBluePortal = Vector3.Scale(relativePositionToBluePortal, new Vector3(-0.5f, -0.5f, 0.01f));
+        relativePositionToBluePortal = Vector3.Scale(relativePositionToBluePortal, new Vector3(-0.1f, -1, 0.01f));
         orangePortalCamera.transform.position = orangePortal.TransformPoint(relativePositionToBluePortal);
         
         /*float angularDifferenceBetweenOrangePortalRotations = Quaternion.Angle(orangePortal.rotation, bluePortal.rotation);
@@ -118,18 +123,12 @@ public class Portal : MonoBehaviour
         orangePortalCamera.transform.rotation = Quaternion.LookRotation(newOrangeCameraDirection, Vector3.up);*/
         
         Vector3 relativeRotationToOrangePortal = bluePortal.InverseTransformDirection(mainCamera.transform.forward);
-        relativeRotationToOrangePortal = Vector3.Scale(relativeRotationToOrangePortal, new Vector3(0, 0, -0.01f));
+        relativeRotationToOrangePortal = Vector3.Scale(relativeRotationToOrangePortal, new Vector3(1, 1, -1));
         orangePortalCamera.transform.forward = orangePortal.TransformDirection(relativeRotationToOrangePortal);
         
         // Adjust rotation to move opposite to main camera z to give the illusion of being still
         // Adjust rotation to preserve y rotation
-        orangePortalCamera.transform.rotation = orangePortalCamera.transform.rotation * adjustedRotation;
-        
-        // Clamp the pitch and yaw of the orange portal camera's rotation
-        Vector3 orangePortalEulerAngles = orangePortalCamera.transform.eulerAngles;
-        //orangePortalEulerAngles.x = Mathf.Clamp(orangePortalEulerAngles.x, pitchMin, pitchMax);
-        orangePortalEulerAngles.y = Mathf.Clamp(orangePortalEulerAngles.y, yawMin, yawMax);
-        orangePortalCamera.transform.eulerAngles = orangePortalEulerAngles;
+        //orangePortalCamera.transform.rotation = orangePortalCamera.transform.rotation * adjustedRotation;
         
         ClampCameraPosition(orangePortal, orangePortalCamera);
     }
