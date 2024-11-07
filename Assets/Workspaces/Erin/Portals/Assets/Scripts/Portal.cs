@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Portal : MonoBehaviour
 {
@@ -16,7 +17,14 @@ public class Portal : MonoBehaviour
     [SerializeField] private Material orangePortalMaterial;
     [Space]
     [SerializeField] private bool AR_VR;
-
+    
+    
+    // Rotation limits
+    public float pitchMin = 0; // Minimum pitch (look down)
+    public float pitchMax = 0;  // Maximum pitch (look up)
+    public float yawMin = 0;   // Minimum yaw (look left)
+    public float yawMax = 175f;    // Maximum yaw (look right)
+    
     // TEMPORARY SERIALIZABLE, ACTUAL IMPLEMENTATION TBD
     [SerializeField] private GameObject cameraRig;
 
@@ -28,6 +36,7 @@ public class Portal : MonoBehaviour
         }
         
         bluePortalCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        bluePortalCamera.targetTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
         
         if (orangePortalCamera.targetTexture != null)
         {
@@ -35,6 +44,7 @@ public class Portal : MonoBehaviour
         }
         
         orangePortalCamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        bluePortalCamera.targetTexture.dimension = UnityEngine.Rendering.TextureDimension.Tex2D;
         
         // Blue portal displays what orange can see and vice versa
         bluePortalMaterial.mainTexture = orangePortalCamera.targetTexture;
@@ -43,22 +53,12 @@ public class Portal : MonoBehaviour
     
     void ClampCameraPosition(Transform portal, Camera portalCamera)
     {
-        // Calculate the vector from the portal to the camera
         Vector3 directionToCamera = portalCamera.transform.position - portal.position;
-
-        // Get the portal's FOV (vertical)
         float halfVerticalFOV = Mathf.Tan(Mathf.Deg2Rad * mainCamera.fieldOfView / 2);
-    
-        // Get the distance from the portal to the camera
         float distanceToCamera = directionToCamera.magnitude;
-
-        // Get the size of the portal based on its scale (height)
         float portalHeight = portal.localScale.y;
-    
-        // The maximum distance at which the camera can be from the portal before it goes beyond the FOV
         float maxDistance = portalHeight / (2 * halfVerticalFOV);
     
-        // Clamp the camera's distance to the portal so it doesn't go beyond the FOV
         if (distanceToCamera > maxDistance)
         {
             portalCamera.transform.position = portal.position + directionToCamera.normalized * maxDistance;
@@ -67,8 +67,12 @@ public class Portal : MonoBehaviour
 
     void Update()
     {
-        float mainCameraZRotation = mainCamera.transform.eulerAngles.z;
-        Quaternion invertedRotation = Quaternion.Euler(0, 0, mainCameraZRotation);
+        Quaternion adjustedRotation = 
+            Quaternion.Euler(
+                mainCamera.transform.eulerAngles.x, 
+                mainCamera.transform.eulerAngles.y, 
+                mainCamera.transform.eulerAngles.z
+            );
         
         // Adjust Projection Matrix
         float FOV = mainCamera.fieldOfView;
@@ -88,32 +92,44 @@ public class Portal : MonoBehaviour
         // Blue Camera
 
         Vector3 relativePositionToOrangePortal = orangePortal.InverseTransformPoint(mainCamera.transform.position);
-        relativePositionToOrangePortal = Vector3.Scale(relativePositionToOrangePortal, new Vector3(-1, 0, -1));
+        relativePositionToOrangePortal = Vector3.Scale(relativePositionToOrangePortal, new Vector3(-0.5f, 0, 0.01f));
         bluePortalCamera.transform.position = bluePortal.TransformPoint(relativePositionToOrangePortal);
         
         ClampCameraPosition(bluePortal, bluePortalCamera);
         
-        float angularDifferenceBetweenBluePortalRotations = Quaternion.Angle(bluePortal.rotation, orangePortal.rotation);
-
-        Quaternion bluePortalRotationalDifference = Quaternion.AngleAxis(angularDifferenceBetweenBluePortalRotations, Vector3.up);
-        Vector3 newBlueCameraDirection = bluePortalRotationalDifference * mainCamera.transform.forward;
-        bluePortalCamera.transform.rotation = Quaternion.LookRotation(newBlueCameraDirection, Vector3.up);
+        Vector3 relativeRotationToBluePortal = orangePortal.InverseTransformDirection(mainCamera.transform.forward);
+        relativeRotationToBluePortal = Vector3.Scale(relativeRotationToBluePortal, new Vector3(0, 0, -0.01f));
+        bluePortalCamera.transform.forward = bluePortal.TransformDirection(relativeRotationToBluePortal);
         
-        bluePortalCamera.transform.rotation = bluePortalCamera.transform.rotation * invertedRotation;
+        // Adjust rotation to move opposite to main camera z to give the illusion of being still
+        // Adjust rotation to preserve y rotation
+        bluePortalCamera.transform.rotation = bluePortalCamera.transform.rotation * adjustedRotation;
         
         // Orange Camera
 
         Vector3 relativePositionToBluePortal = bluePortal.InverseTransformPoint(mainCamera.transform.position);
-        relativePositionToBluePortal = Vector3.Scale(relativePositionToBluePortal, new Vector3(-1, 0, -1));
+        relativePositionToBluePortal = Vector3.Scale(relativePositionToBluePortal, new Vector3(-0.5f, -0.5f, 0.01f));
         orangePortalCamera.transform.position = orangePortal.TransformPoint(relativePositionToBluePortal);
         
-        float angularDifferenceBetweenOrangePortalRotations = Quaternion.Angle(orangePortal.rotation, bluePortal.rotation);
+        /*float angularDifferenceBetweenOrangePortalRotations = Quaternion.Angle(orangePortal.rotation, bluePortal.rotation);
 
         Quaternion orangePortalRotationalDifference = Quaternion.AngleAxis(angularDifferenceBetweenOrangePortalRotations, Vector3.up);
         Vector3 newOrangeCameraDirection = orangePortalRotationalDifference * mainCamera.transform.forward;
-        orangePortalCamera.transform.rotation = Quaternion.LookRotation(newOrangeCameraDirection, Vector3.up);
+        orangePortalCamera.transform.rotation = Quaternion.LookRotation(newOrangeCameraDirection, Vector3.up);*/
         
-        orangePortalCamera.transform.rotation = orangePortalCamera.transform.rotation * invertedRotation;
+        Vector3 relativeRotationToOrangePortal = bluePortal.InverseTransformDirection(mainCamera.transform.forward);
+        relativeRotationToOrangePortal = Vector3.Scale(relativeRotationToOrangePortal, new Vector3(0, 0, -0.01f));
+        orangePortalCamera.transform.forward = orangePortal.TransformDirection(relativeRotationToOrangePortal);
+        
+        // Adjust rotation to move opposite to main camera z to give the illusion of being still
+        // Adjust rotation to preserve y rotation
+        orangePortalCamera.transform.rotation = orangePortalCamera.transform.rotation * adjustedRotation;
+        
+        // Clamp the pitch and yaw of the orange portal camera's rotation
+        Vector3 orangePortalEulerAngles = orangePortalCamera.transform.eulerAngles;
+        //orangePortalEulerAngles.x = Mathf.Clamp(orangePortalEulerAngles.x, pitchMin, pitchMax);
+        orangePortalEulerAngles.y = Mathf.Clamp(orangePortalEulerAngles.y, yawMin, yawMax);
+        orangePortalCamera.transform.eulerAngles = orangePortalEulerAngles;
         
         ClampCameraPosition(orangePortal, orangePortalCamera);
     }
