@@ -1,25 +1,21 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Unlit/ScreenCutoutShader"
 {
-    Properties
+	Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Inflation("Inflation", float) = 0
     }
     SubShader
     {
-        Tags { "Queue" = "Overlay" "IgnoreProjector" = "True" "RenderType" = "Overlay" }
-        Lighting Off
-        Cull Back
-        ZWrite On
-        ZTest Less
-        
+        Tags { "Queue"="Transparent" "RenderType"="Transparent"}
         LOD 100
-
-        Fog { Mode Off }
 
         Pass
         {
             CGPROGRAM
+
             #pragma vertex vert
             #pragma fragment frag
 
@@ -30,45 +26,38 @@ Shader "Unlit/ScreenCutoutShader"
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
                 float3 normal : NORMAL;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2f
             {
                 float4 vertex : SV_POSITION;
-                float4 screenPos : TEXCOORD1; // Screen space position
+                float2 uv : TEXCOORD0;
+                float4 screenPos:TEXCOORD1;
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
             float _Inflation;
 
-            v2f vert(appdata v)
+            v2f vert (appdata v)
             {
                 v2f o;
                 UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_OUTPUT(v2f, o);
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-                
-                // Apply inflation to vertices
+                UNITY_INITIALIZE_OUTPUT(v2f, o);
                 o.vertex = UnityObjectToClipPos(v.vertex + v.normal * _Inflation);
-                
-                // Calculate screen position (Unity handles stereo automatically here)
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.screenPos = ComputeScreenPos(o.vertex);
                 return o;
             }
 
-            sampler2D _MainTex;
-
-            // Fragment shader
-            fixed4 frag(v2f i) : SV_Target
+            fixed4 frag (v2f i) : SV_Target
             {
-                // Use screen position normalized to [0, 1]
-                i.screenPos /= i.screenPos.w;
-
-                // Convert screen position to texture UV space
-                fixed4 col = tex2D(_MainTex, i.screenPos.xy);
-
-                // Return the texture color
-                return col;
+                float2 uvScreen = i.screenPos.xy / i.screenPos.w;
+                uvScreen = TRANSFORM_TEX(uvScreen,_MainTex);
+                return tex2D(_MainTex, uvScreen);
             }
             ENDCG
         }
