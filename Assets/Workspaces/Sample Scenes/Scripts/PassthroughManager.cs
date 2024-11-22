@@ -18,6 +18,9 @@ public class PassthroughManager : MonoBehaviour
     [SerializeField] private GameObject[] disableOnPassthrough;
 
     [SerializeField] private bool toggle;
+    
+    [SerializeField] private int hideOnPassthrough;
+    
     private bool toggleSet;
     
     // BEGIN Example Code Only
@@ -51,6 +54,8 @@ public class PassthroughManager : MonoBehaviour
             layer.enabled = false;
             centerCamera.clearFlags = CameraClearFlags.Skybox;
             centerCamera.backgroundColor = defaultBackground; 
+            
+            // disable hide on passthrough
         }
         else
         {
@@ -58,14 +63,12 @@ public class PassthroughManager : MonoBehaviour
             
             centerCamera.clearFlags = CameraClearFlags.SolidColor;
             centerCamera.backgroundColor = Color.clear;
+            
+            //enable hide on passthrough 
+            rig.centerEyeAnchor.GetComponent<Camera>().cullingMask &= ~(1 << hideOnPassthrough);
         }
 
         passthroughOn = !passthroughOn;
-        
-        foreach (var element in disableOnPassthrough)
-        {
-            element.SetActive(!passthroughOn);
-        }
         
         // if Normal Passthrough On, Disable selectivePassthrough items
         selectivePassthroughButton.SetActive(!passthroughOn); 
@@ -81,10 +84,6 @@ public class PassthroughManager : MonoBehaviour
             
             centerCamera.backgroundColor = defaultBackground; 
             
-            foreach (var element in selectiveElements)
-            {
-                element.SetActive(false);
-            }
         }
         else
         {
