@@ -9,9 +9,9 @@ public class PassthroughManager : MonoBehaviour
 
     private bool passthroughOn = false;
     private bool selectivePassthroughOn = false;
+    private OVRCameraRig rig;
     
     [SerializeField] private OVRPassthroughLayer layer;
-    [SerializeField] private OVRCameraRig rig;
     [SerializeField] private Color defaultBackground;
 
     [SerializeField] private GameObject[] selectiveElements;
@@ -29,10 +29,11 @@ public class PassthroughManager : MonoBehaviour
     [SerializeField] private GameObject selectivePassthroughButton;
     // END Example Code Only
     
-    void Awake()
-    {
+    void Awake() {
         if (Singleton != null && Singleton != this) Destroy(this.gameObject);
         else Singleton = this;
+        
+        rig = GameManager.Singleton.ovrCameraRig;
     }
 
     void Update()
