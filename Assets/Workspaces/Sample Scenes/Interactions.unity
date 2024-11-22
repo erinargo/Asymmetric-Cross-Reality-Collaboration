@@ -4689,7 +4689,7 @@ MonoBehaviour:
   - {fileID: 275789098}
   - {fileID: 1659711005}
   - {fileID: 954685656}
-  transHub: {fileID: 870629287}
+  transHub: {fileID: 954685656}
   connectorPrefab: {fileID: 3405074784325852121, guid: cc0b6ce8baee2fb4d9373fc9f5e0ee1b, type: 3}
   routeWidth: 0.2
   routeColors:
