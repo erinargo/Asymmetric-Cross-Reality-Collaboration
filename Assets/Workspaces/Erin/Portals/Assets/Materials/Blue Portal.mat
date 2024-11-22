@@ -61,6 +61,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AspectRatio: 0.50496143
     - _BlendOpAlpha: 3
     - _BlendOpColor: 2
     - _BumpScale: 1

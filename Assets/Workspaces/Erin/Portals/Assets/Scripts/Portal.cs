@@ -12,10 +12,12 @@ public class Portals : MonoBehaviour
     [SerializeField] private Transform orangePortal;
     [Space]
     [SerializeField] private Camera mainCamera;
-    //[SerializeField] private OVRCameraRig ovrCameraRig;
+    [SerializeField] private OVRCameraRig ovrCameraRig;
     [Space]
     [SerializeField] private Material bluePortalMaterial;
     [SerializeField] private Material orangePortalMaterial;
+    [Space]
+    [SerializeField] private Vector3 inverseTransformDirection;
     
     void Awake()
     {
@@ -37,9 +39,7 @@ public class Portals : MonoBehaviour
     void PositionPortalCamera(Transform otherPortal, Transform portal, Camera thisPortalCamera) {
         Quaternion adjustedRotation = 
             Quaternion.Euler(
-                0, 
-                0, 
-                mainCamera.transform.rotation.eulerAngles.z
+                0, 0, mainCamera.transform.rotation.eulerAngles.z
             );
         
         Vector3 relativePosOtherPortal = otherPortal.InverseTransformPoint(mainCamera.transform.position);
@@ -47,7 +47,7 @@ public class Portals : MonoBehaviour
         thisPortalCamera.transform.position = portal.TransformPoint(relativePosOtherPortal);
         
         var relativeRotationToOtherPortal = portal.transform.InverseTransformDirection(mainCamera.transform.forward);
-        relativeRotationToOtherPortal = Vector3.Scale(relativeRotationToOtherPortal, new Vector3(1, 1, 1));
+        relativeRotationToOtherPortal = Vector3.Scale(relativeRotationToOtherPortal, inverseTransformDirection);
         thisPortalCamera.transform.forward = otherPortal.TransformDirection(relativeRotationToOtherPortal);
         
         thisPortalCamera.transform.rotation = thisPortalCamera.transform.rotation * adjustedRotation;
@@ -58,37 +58,37 @@ public class Portals : MonoBehaviour
             bluePortalCamera.targetTexture.Release();
         }
         
-        /*bluePortalCamera.targetTexture = 
+        bluePortalCamera.targetTexture = 
             new RenderTexture(
                 ovrCameraRig.leftEyeCamera.pixelWidth, 
                 ovrCameraRig.leftEyeCamera.pixelHeight, 
                 24
-            );*/
+            );
         
-        bluePortalCamera.targetTexture = 
+        /*bluePortalCamera.targetTexture = 
             new RenderTexture(
                 Screen.width, 
                 Screen.height, 
                 24
-            );
+            );*/
         
         if (orangePortalCamera.targetTexture != null) {
             orangePortalCamera.targetTexture.Release();
         }
         
-        /*orangePortalCamera.targetTexture = 
+        orangePortalCamera.targetTexture = 
             new RenderTexture(
                 ovrCameraRig.leftEyeCamera.pixelWidth, 
                 ovrCameraRig.leftEyeCamera.pixelHeight, 
                 24
-            );*/
+            );
         
-        orangePortalCamera.targetTexture = 
+        /*orangePortalCamera.targetTexture = 
             new RenderTexture(
                 Screen.width, 
                 Screen.height, 
                 24
-            );
+            );*/
         
         // Blue portal displays what orange can see and vice versa
         bluePortalMaterial.mainTexture = orangePortalCamera.targetTexture;
@@ -101,6 +101,10 @@ public class Portals : MonoBehaviour
         // Blue Camera
         bluePortalCamera.projectionMatrix = mainCamera.projectionMatrix;
         bluePortalCamera.fieldOfView = mainCamera.fieldOfView;
+        bluePortalCamera.aspect = (float)ovrCameraRig.leftEyeCamera.pixelWidth / (float)ovrCameraRig.leftEyeCamera.pixelHeight;
+        bluePortalCamera.depth = mainCamera.depth;
+        
+        Debug.Log(bluePortalCamera.aspect);
         
         PositionPortalCamera(orangePortal, bluePortal, bluePortalCamera);
         ClampCameraPosition(bluePortal, bluePortalCamera);
@@ -108,6 +112,8 @@ public class Portals : MonoBehaviour
         // Orange Camera
         orangePortalCamera.projectionMatrix = mainCamera.projectionMatrix;
         orangePortalCamera.fieldOfView = mainCamera.fieldOfView;
+        orangePortalCamera.aspect = (float)ovrCameraRig.leftEyeCamera.pixelWidth / (float)ovrCameraRig.leftEyeCamera.pixelHeight;
+        orangePortalCamera.depth = mainCamera.depth;
         
         PositionPortalCamera(bluePortal, orangePortal, orangePortalCamera);
         ClampCameraPosition(orangePortal, orangePortalCamera);

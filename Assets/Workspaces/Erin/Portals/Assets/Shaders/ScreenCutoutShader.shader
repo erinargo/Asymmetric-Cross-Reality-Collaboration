@@ -3,63 +3,58 @@
 Shader "Unlit/ScreenCutoutShader"
 {
 	Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-        _Inflation("Inflation", float) = 0
-    }
-    SubShader
-    {
-        Tags { "Queue"="Transparent" "RenderType"="Transparent"}
-        LOD 100
+	{
+		_MainTex ("Texture", 2D) = "white" {}
+	}
+	SubShader
+	{
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
+		Lighting Off
+		Cull Back
+		ZWrite On
+		ZTest Less
+		
+		Fog{ Mode Off }
 
-        Pass
-        {
-            CGPROGRAM
+		Pass
+		{
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			
+			#include "UnityCG.cginc"
 
-            #pragma vertex vert
-            #pragma fragment frag
+			struct appdata
+			{
+				float4 vertex : POSITION;
+				float2 uv : TEXCOORD0;
+			};
 
-            #include "UnityCG.cginc"
+			struct v2f
+			{
+				//float2 uv : TEXCOORD0;
+				float4 vertex : SV_POSITION;
+				float4 screenPos : TEXCOORD1;
+			};
 
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-                float3 normal : NORMAL;
-                UNITY_VERTEX_INPUT_INSTANCE_ID
-            };
+			v2f vert (appdata v)
+			{
+				v2f o;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.screenPos = ComputeScreenPos(o.vertex);
+				return o;
+			}
+			
+			sampler2D _MainTex;
 
-            struct v2f
-            {
-                float4 vertex : SV_POSITION;
-                float2 uv : TEXCOORD0;
-                float4 screenPos:TEXCOORD1;
-                UNITY_VERTEX_OUTPUT_STEREO
-            };
-
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-            float _Inflation;
-
-            v2f vert (appdata v)
-            {
-                v2f o;
-                UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-                UNITY_INITIALIZE_OUTPUT(v2f, o);
-                o.vertex = UnityObjectToClipPos(v.vertex + v.normal * _Inflation);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                o.screenPos = ComputeScreenPos(o.vertex);
-                return o;
-            }
-
-            fixed4 frag (v2f i) : SV_Target
-            {
-                float2 uvScreen = i.screenPos.xy / i.screenPos.w;
-                uvScreen = TRANSFORM_TEX(uvScreen,_MainTex);
-                return tex2D(_MainTex, uvScreen);
-            }
-            ENDCG
-        }
-    }
+			fixed4 frag (v2f i) : SV_Target
+			{
+				i.screenPos /= i.screenPos.w;
+				fixed4 col = tex2D(_MainTex, float2(i.screenPos.x, i.screenPos.y));
+				
+				return col;
+			}
+			ENDCG
+		}
+	}
 }
