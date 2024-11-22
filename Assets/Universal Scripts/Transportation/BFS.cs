@@ -119,7 +119,7 @@ public class BFS : MonoBehaviour
         }
     }
 
-    public void ActivateNode(Node node, List<Node> previousNodes = null, Color previousRouteColor = default(Color)) {
+    void ActivateNode(Node node, List<Node> previousNodes = null, Color previousRouteColor = default(Color)) {
         if(previousNodes == null) previousNodes = new List<Node>();
         
         if (previousRouteColor == default(Color)) 
@@ -194,20 +194,11 @@ public class BFS : MonoBehaviour
         
         possibleRoutes = nearestNodes;
     }
-
-    public void Test() {
-        
-        Debug.Log("This is a test!");
-    }
-
+    
     void Awake() {
         foreach (Transform node in nodes) _graph.Add(new Node(node.transform));
         InitPossibleConnections();
         _t = _graph.First(n => n.GetPosition().position == transHub.position);
-
-        _examplePoint = _graph[2];
-        
-        ActivateNode(_examplePoint);
         
         if (Singleton != null && Singleton != this) Destroy(this.gameObject);
         else Singleton = this;
