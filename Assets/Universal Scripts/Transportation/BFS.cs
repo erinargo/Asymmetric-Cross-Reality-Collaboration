@@ -55,6 +55,7 @@ public class BFS : MonoBehaviour
         public State state;
         public string name;
     }
+    public static BFS Singleton { get; private set; }
 
     List<Node> _graph = new List<Node>();
     
@@ -118,7 +119,7 @@ public class BFS : MonoBehaviour
         }
     }
 
-    void ActivateNode(Node node, List<Node> previousNodes = null, Color previousRouteColor = default(Color)) {
+    public void ActivateNode(Node node, List<Node> previousNodes = null, Color previousRouteColor = default(Color)) {
         if(previousNodes == null) previousNodes = new List<Node>();
         
         if (previousRouteColor == default(Color)) 
@@ -194,24 +195,21 @@ public class BFS : MonoBehaviour
         possibleRoutes = nearestNodes;
     }
 
+    public void Test() {
+        
+        Debug.Log("This is a test!");
+    }
+
     void Awake() {
         foreach (Transform node in nodes) _graph.Add(new Node(node.transform));
         InitPossibleConnections();
-        
-        _examplePoint = _graph[4];
         _t = _graph.First(n => n.GetPosition().position == transHub.position);
-        
-        /*foreach (Node node in possibleRoutes.Keys) {
-            for (int i = 0; i < possibleRoutes[node].Count; i++) Debug.Log(node.GetPosition().name + ": " + possibleRoutes[node][i].GetPosition().name);
-        }*/
-        
-        // ActivateNode(_examplePoint);
-    }
 
-    void Update() {
-        if (_exampleToggle && !exampleSet) {
-            ActivateNode(_examplePoint);
-            exampleSet = true;
-        }
+        _examplePoint = _graph[2];
+        
+        ActivateNode(_examplePoint);
+        
+        if (Singleton != null && Singleton != this) Destroy(this.gameObject);
+        else Singleton = this;
     }
 }
