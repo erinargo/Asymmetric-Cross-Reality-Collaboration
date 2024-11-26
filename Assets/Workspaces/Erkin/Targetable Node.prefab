@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8192638456343838457}
   m_Layer: 0
-  m_Name: Teleport Hotspot
+  m_Name: Targetable Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 85906e61-05be-4ea9-bfa6-139215b858df
-  instanceId: a81e9f1d-08b1-400c-b8a0-97912e8074d3
+  instanceId: bfcc1af0-a027-4450-b486-91a14643d0dd
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 5c49fca3-fb86-46fe-8728-fe25eb009af8
