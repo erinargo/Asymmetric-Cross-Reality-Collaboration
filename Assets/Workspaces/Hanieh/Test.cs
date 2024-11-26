@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    [SerializeField] private BFS bFS;
+    [SerializeField] private BFS.Node node1;
     void Start() {
         
         // 1. Somehow figure out how to detect when cube has been dropped???
@@ -14,6 +17,9 @@ public class Test : MonoBehaviour
         
 
         // BFS.Singleton.Test();
+
+        // print("node1: " + bFS.GetConnectedNodes());
+        // bFS.
     }
     
     
