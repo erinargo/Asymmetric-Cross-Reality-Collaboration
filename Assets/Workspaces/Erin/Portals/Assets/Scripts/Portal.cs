@@ -16,12 +16,16 @@ public class Portals : MonoBehaviour
     [Space]
     [SerializeField] private Vector3 inverseTransformDirection;
 
-    private Camera mainCamera;
-    private OVRCameraRig ovrCameraRig;
+    [Space] 
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private OVRCameraRig ovrCameraRig;
+
+    //private Camera mainCamera;
+    //private OVRCameraRig ovrCameraRig;
     
     void Awake() {
-        mainCamera = GameManager.Singleton.mainCamera;
-        ovrCameraRig = GameManager.Singleton.ovrCameraRig;
+        //mainCamera = GameManager.Singleton.mainCamera;
+        //ovrCameraRig = GameManager.Singleton.ovrCameraRig;
         
         FixRTResolution(); // init
     }

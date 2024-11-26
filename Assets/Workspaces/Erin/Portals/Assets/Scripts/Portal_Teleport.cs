@@ -18,16 +18,20 @@ public class Portal_Teleport : MonoBehaviour
     }
 
     void Teleport() {
-        Debug.Log("Teleport");
-        
-        float rotationDiff = -Quaternion.Angle(transform.rotation, _otherPortal.rotation);
-        rotationDiff += 180;
-        
-        _player.Rotate(Vector3.up, rotationDiff);
-        
-        Vector3 positionOffset = transform.InverseTransformPoint(camera.transform.position);
-        positionOffset = Vector3.Scale(positionOffset, new Vector3(-1, 1, -1));
-        _player.transform.position = _otherPortal.TransformPoint(positionOffset);
+        foreach (Transform child in _player.GetComponentsInChildren<Transform>()) {
+            var translatedPosition = new Vector3(
+                child.position.x + (transform.position.x - camera.position.x) + 0.5f, 
+                child.position.y, 
+                child.position.z + (transform.position.z - camera.position.z));
+            
+            child.position = translatedPosition;
+            child.rotation = Quaternion.Euler(
+                child.rotation.eulerAngles.x,
+                child.rotation.eulerAngles.y + (transform.rotation.eulerAngles.y - camera.rotation.eulerAngles.y) + 180f,
+                child.rotation.eulerAngles.z
+                ); //Quaternion.Euler(rotationDiff.x, rotationDiff.y + (), rotationDiff.z);
+            //child.Rotate(Vector3.up, rotationDiff);
+        }
     }
 
     void Update() {
@@ -37,7 +41,7 @@ public class Portal_Teleport : MonoBehaviour
         
         Debug.Log("Distance: " + distance);
 
-        if (distance <= 0.9f){
+        if (distance <= 0.75f){
             Teleport();
             
             if(AR_VR) PassthroughManager.Singleton.Toggle();
