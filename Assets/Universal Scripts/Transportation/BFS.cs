@@ -11,6 +11,8 @@ public class BFS : MonoBehaviour
         Active
     }
 
+    // Instantiate(GameObject, optional transform)
+
     public class Node {
         private Transform _Position;
         private State _State;
@@ -210,6 +212,7 @@ public class BFS : MonoBehaviour
     }
 
 
+    //My Code:
     List<Node> blueRoute = new List<Node>();
     List<Node> redRoute = new List<Node>();
 
