@@ -81,7 +81,8 @@ public class BFS : MonoBehaviour
     List<Node> FindNearestPoints(List<Node> nodes, Node node) {
         // nodes.Remove(node);
         
-        // nodes is a pointer to _graph and removing the start point does not preserve original data.
+        // nodes is a pointer to _graph and removing the
+        // point does not preserve original data.
         // to fix we're going to create a local copy
         List<Node> localNodes = new List<Node>(nodes);
         
@@ -220,27 +221,37 @@ public class BFS : MonoBehaviour
         Color node_route_color;
         
         if (_graph.Count > 0) {
-            
+
             // To activate all nodes:
             // foreach (Node nodeGraph in _graph)
-            for (int i=0; i <_graph.Count; i++)
-            {
-                if (i%2 == 0)
-                {
-                    redRoute.Add(_graph[i]);
-                    node_route_color = routeColors[0].color;
-                    ActivateNode(_graph[i], redRoute, node_route_color);
-                    print("!!!");
-                }
-                else
-                {
-                    blueRoute.Add(_graph[i]);
-                    node_route_color = routeColors[1].color;
-                    ActivateNode(_graph[i], blueRoute, node_route_color);
-                }
-                
-                // ActivateNode(_graph[i], null, node_route_color);
-            }
+            print("!!!!! " + _graph.Count);
+            _graph[0].AddConnection(_graph[1]);
+            _graph[1].AddConnection(_graph[2]);
+
+            _graph[0].SetRouteColor(Color.red);
+            _graph[1].SetRouteColor(Color.blue);
+
+            DrawConnections(_graph[0]);
+            DrawConnections(_graph[1]);
+
+            //for (int i=0; i <_graph.Count; i++)
+            //{
+            //    if (i%2 == 0)
+            //    {
+            //        redRoute.Add(_graph[i]);
+            //        node_route_color = routeColors[0].color;
+            //        ActivateNode(_graph[i], redRoute, node_route_color);
+            //        print("!!!");
+            //    }
+            //    else
+            //    {
+            //        blueRoute.Add(_graph[i]);
+            //        node_route_color = routeColors[1].color;
+            //        ActivateNode(_graph[i], blueRoute, node_route_color);
+            //    }
+
+            //    // ActivateNode(_graph[i], null, node_route_color);
+            //}
 
             // to find all Route Colors:
             foreach (RouteColor routeColor in routeColors)
