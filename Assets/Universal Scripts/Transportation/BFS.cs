@@ -213,8 +213,10 @@ public class BFS : MonoBehaviour
 
 
     //My Code:
-    List<Node> blueRoute = new List<Node>();
-    List<Node> redRoute = new List<Node>();
+    List<Node> BlueRoute = new List<Node>();
+    List<Node> PurpleRoute = new List<Node>();
+    List<Node> GoldRoute = new List<Node>();
+    List<Node> RedRoute = new List<Node>();
 
     void Start() {
         Color node_route_color;
@@ -223,35 +225,69 @@ public class BFS : MonoBehaviour
             
             // To activate all nodes:
             // foreach (Node nodeGraph in _graph)
-            for (int i=0; i <_graph.Count; i++)
+            for (int i=0; i <_graph.Count-1; i++)
             {
-                if (i%2 == 0)
-                {
-                    redRoute.Add(_graph[i]);
-                    node_route_color = routeColors[0].color;
-                    ActivateNode(_graph[i], redRoute, node_route_color);
-                    print("!!!");
-                }
-                else
-                {
-                    blueRoute.Add(_graph[i]);
-                    node_route_color = routeColors[1].color;
-                    ActivateNode(_graph[i], blueRoute, node_route_color);
-                }
+                print("!!Node" + 1);
+                _graph[i].AddConnection(_graph[i+1]);
+                // _graph[i].SetRouteColor(Color.blue);
+                _graph[i].SetRouteColor(routeColors[i].color);
+                _graph[i].SetState(State.Active);
+                DrawConnections(_graph[i]);
+
+                print("!!@ " + routeColors[i].name);
+                // if (i%2 == 0)
+                // {
+                //     RedRoute.Add(_graph[i]);
+                //     node_route_color = routeColors[0].color;
+                //     ActivateNode(_graph[i], RedRoute, node_route_color);
+                //     print("!!!");
+                // }
+                // else
+                // {
+                //     BlueRoute.Add(_graph[i]);
+                //     node_route_color = routeColors[1].color;
+                //     ActivateNode(_graph[i], BlueRoute, node_route_color);
+                // }
+
+            }
+
+
+
+        // if (_graph.Count > 0) {
+            
+        //     // To activate all nodes:
+        //     // foreach (Node nodeGraph in _graph)
+        //     for (int i=0; i <_graph.Count; i++)
+        //     {
+        //         if (i%2 == 0)
+        //         {
+        //             RedRoute.Add(_graph[i]);
+        //             node_route_color = routeColors[0].color;
+        //             ActivateNode(_graph[i], RedRoute, node_route_color);
+        //             print("!!!");
+        //         }
+        //         else
+        //         {
+        //             BlueRoute.Add(_graph[i]);
+        //             node_route_color = routeColors[1].color;
+        //             ActivateNode(_graph[i], BlueRoute, node_route_color);
+        //         }
                 
-                // ActivateNode(_graph[i], null, node_route_color);
-            }
+        //         // ActivateNode(_graph[i], null, node_route_color);
+        //     }
 
-            // to find all Route Colors:
-            foreach (RouteColor routeColor in routeColors)
-            {
-                Debug.Log($"!Name: {routeColor.name}, Color: {routeColor.color}, State: {routeColor.state}");
-            }
+        //     // to find all Route Colors:
+        //     foreach (RouteColor routeColor in routeColors)
+        //     {
+        //         Debug.Log($"!Name: {routeColor.name}, Color: {routeColor.color}, State: {routeColor.state}");
+        //     }
 
-            Debug.Log("Activated node and drew connections.");
-        } else {
-            Debug.LogError("Graph is empty. Ensure nodes are assigned.");
+        //     Debug.Log("Activated node and drew connections.");
+        // } else {
+        //     Debug.LogError("Graph is empty. Ensure nodes are assigned.");
         }
+
+
     }
 
 
