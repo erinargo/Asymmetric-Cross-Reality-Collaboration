@@ -68,6 +68,8 @@ public class BFS : MonoBehaviour
     [SerializeField] private float routeWidth = 0.2f;
     [Space]
     [SerializeField] private RouteColor[] routeColors;
+
+    [SerializeField] private GameObject[] routes;
     
     private Dictionary<Node, List<Node>> possibleRoutes = new Dictionary<Node, List<Node>>();
     
@@ -78,7 +80,8 @@ public class BFS : MonoBehaviour
     private bool exampleSet;
     [SerializeField] private bool _exampleToggle = false;
     
-    List<Node> FindNearestPoints(List<Node> nodes, Node node) {
+    List<Node> FindNearestPoints(List<Node> nodes, Node node) 
+    {
         // nodes.Remove(node);
         
         // nodes is a pointer to _graph and removing the
@@ -103,6 +106,10 @@ public class BFS : MonoBehaviour
         }
 
         return nearestNodes;
+    }
+
+    public void ActivateRoutes() {
+        routes[0].SetActive(true);
     }
 
     void DrawConnections(Node node) {
@@ -217,7 +224,8 @@ public class BFS : MonoBehaviour
     List<Node> blueRoute = new List<Node>();
     List<Node> redRoute = new List<Node>();
 
-    void Start() {
+    void Start() 
+    {
         Color node_route_color;
         
         if (_graph.Count > 0) {
@@ -227,12 +235,33 @@ public class BFS : MonoBehaviour
             print("!!!!! " + _graph.Count);
             _graph[0].AddConnection(_graph[1]);
             _graph[1].AddConnection(_graph[2]);
+            _graph[2].AddConnection(_graph[3]);
+            _graph[3].AddConnection(_graph[0]);
 
+           _graph[4].AddConnection(_graph[5]);
+           _graph[5].AddConnection(_graph[6]);
+           _graph[6].AddConnection(_graph[7]);
+           _graph[7].AddConnection(_graph[4]);
+            
             _graph[0].SetRouteColor(Color.red);
-            _graph[1].SetRouteColor(Color.blue);
+            _graph[1].SetRouteColor(Color.red);
+            _graph[2].SetRouteColor(Color.red);
+            _graph[3].SetRouteColor(Color.red);
+
+           _graph[4].SetRouteColor(Color.blue);
+           _graph[5].SetRouteColor(Color.blue);
+           _graph[6].SetRouteColor(Color.blue);
+           _graph[7].SetRouteColor(Color.blue);
 
             DrawConnections(_graph[0]);
             DrawConnections(_graph[1]);
+            DrawConnections(_graph[2]);
+            DrawConnections(_graph[3]);
+
+            DrawConnections(_graph[4]);
+            DrawConnections(_graph[5]);
+            DrawConnections(_graph[6]);
+            DrawConnections(_graph[7]);
 
             //for (int i=0; i <_graph.Count; i++)
             //{
