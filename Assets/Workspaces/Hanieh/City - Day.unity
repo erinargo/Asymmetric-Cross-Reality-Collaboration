@@ -195,6 +195,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -327,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -385,6 +389,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -524,7 +532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -828,7 +836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -914,6 +922,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -980,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1061,6 +1073,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
   m_PrefabInstance: {fileID: 1424828330}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &58488180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 495912011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &60959403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1072,6 +1089,10 @@ PrefabInstance:
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_Name
       value: tile-plain_concrete (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1133,6 +1154,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1366,7 +1391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1428,6 +1453,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1679,7 +1708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2139,7 +2168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2221,7 +2250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2289,6 +2318,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -2351,7 +2384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566695694290898, guid: 3ba35bd1653e346d1a0fbd09c1ece60c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4851969818332448, guid: 3ba35bd1653e346d1a0fbd09c1ece60c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2409,6 +2442,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2555,7 +2592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalScale.x
@@ -2633,7 +2670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2801,6 +2838,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (36)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -2876,7 +2917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3127,6 +3168,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -3186,6 +3231,10 @@ PrefabInstance:
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_Name
       value: tile-plain_concrete (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3315,7 +3364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3463,6 +3512,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -3542,7 +3595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3594,10 +3647,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
   m_PrefabInstance: {fileID: 180146849}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &181432697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
+  m_PrefabInstance: {fileID: 707276760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &181639578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7565730081248349038, guid: baeaa78e04503cf4eba535d6dd300360, type: 3}
   m_PrefabInstance: {fileID: 6242496286095569209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &181717743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 1793555869}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &186833694
 PrefabInstance:
@@ -3680,6 +3743,10 @@ PrefabInstance:
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_Name
       value: tile-plain_concrete (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4229,6 +4296,10 @@ PrefabInstance:
       value: building-office-Transpoeration_
       objectReference: {fileID: 0}
     - target: {fileID: 5570702970413146928, guid: 409371e387a1fcf468bc5ecbcfc3c59d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570702970413146928, guid: 409371e387a1fcf468bc5ecbcfc3c59d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -4254,7 +4325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570702970413645584, guid: 409371e387a1fcf468bc5ecbcfc3c59d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5570702970413645584, guid: 409371e387a1fcf468bc5ecbcfc3c59d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4455,7 +4526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4695,7 +4766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4856,6 +4927,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5022,7 +5097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5754,7 +5829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6389780277532430638, guid: 1167bf001fc67214a845d2214dea7dd4, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5913,6 +5988,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6187,6 +6266,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (12)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -6390,6 +6473,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6682,7 +6769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7196,6 +7283,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -7614,7 +7705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7751,7 +7842,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 832216847}
     m_Modifications:
     - target: {fileID: 4842440002672252798, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_Materials.Array.data[4]
@@ -7775,15 +7866,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7803,13 +7894,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6355478434394961579, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
+--- !u!4 &353837769 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
+  m_PrefabInstance: {fileID: 353837768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &358862226
 GameObject:
   m_ObjectHideFlags: 8
@@ -7841,6 +7937,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1721772816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &360627201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
+  m_PrefabInstance: {fileID: 1179532734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &362362144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7856,6 +7957,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7924,7 +8029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8232,6 +8337,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -8294,7 +8403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8803,6 +8912,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2085748193718274572, guid: 24a0f9d1bead58143ad0cf22eaaaae23, type: 3}
   m_PrefabInstance: {fileID: 806591785}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &408170180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
+  m_PrefabInstance: {fileID: 1569935797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &408741631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8978,6 +9092,10 @@ PrefabInstance:
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_Name
       value: tile-road-curve (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4034336420200126, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9255,7 +9373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9320,7 +9438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9403,7 +9521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9614,6 +9732,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -9678,6 +9800,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9754,7 +9880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9817,6 +9943,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9893,7 +10023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10330,7 +10460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498293158422717557, guid: 271c59f5814c11d41b085f18b9aacbb8, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 2498293158422717557, guid: 271c59f5814c11d41b085f18b9aacbb8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10405,6 +10535,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10514,6 +10648,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (9)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -10586,6 +10724,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11102,6 +11244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_concrete (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11379,13 +11525,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: bus (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -273.3
+      value: -273.8
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11393,7 +11555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -110.7
+      value: -108.8
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11401,15 +11563,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11616,6 +11778,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -11715,6 +11881,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12072,6 +12242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bus (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -12256,6 +12430,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -12407,7 +12585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12494,7 +12672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12577,7 +12755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12642,7 +12820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12926,6 +13104,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -12993,6 +13175,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13131,7 +13317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14104,7 +14290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14640,6 +14826,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -14942,6 +15132,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -15092,7 +15286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15158,7 +15352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15221,6 +15415,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15385,7 +15583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15518,6 +15716,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15925,6 +16127,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -16084,6 +16290,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16453,6 +16663,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -16519,7 +16733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16849,6 +17063,10 @@ PrefabInstance:
       value: bus-stop (5)
       objectReference: {fileID: 0}
     - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -17051,6 +17269,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17554,6 +17776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_sand (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17659,6 +17885,10 @@ PrefabInstance:
     - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-road-intersection-t (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17802,7 +18032,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 832216847}
     m_Modifications:
     - target: {fileID: 693274495193792343, guid: 223cae5da25c9864d8a0ae4beb85c410, type: 3}
       propertyPath: m_Materials.Array.data[4]
@@ -17811,6 +18041,10 @@ PrefabInstance:
     - target: {fileID: 1342069436717375106, guid: 223cae5da25c9864d8a0ae4beb85c410, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-road-intersection-nb
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342069436717375106, guid: 223cae5da25c9864d8a0ae4beb85c410, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1861162738571723832, guid: 223cae5da25c9864d8a0ae4beb85c410, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17857,6 +18091,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 223cae5da25c9864d8a0ae4beb85c410, type: 3}
+--- !u!4 &746125410 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1861162738571723832, guid: 223cae5da25c9864d8a0ae4beb85c410, type: 3}
+  m_PrefabInstance: {fileID: 746125409}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &748181210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17941,7 +18180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18235,7 +18474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18350,6 +18589,10 @@ PrefabInstance:
     - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-road-intersection-t (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18531,7 +18774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18673,6 +18916,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18908,6 +19155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_sand (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
@@ -18973,6 +19224,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19113,6 +19368,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (37)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -19199,6 +19458,10 @@ PrefabInstance:
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_Name
       value: tile-plain_concrete (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19334,7 +19597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19393,6 +19656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_concrete (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60
@@ -19447,6 +19714,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7626025336279723433, guid: 8d43bfb31c1010348a37314587d8186f, type: 3}
   m_PrefabInstance: {fileID: 388705706}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &823197366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 1862470118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &828544018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19461,7 +19733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19888,6 +20160,10 @@ Transform:
   - {fileID: 1909576445}
   - {fileID: 1702240389}
   - {fileID: 2117264924}
+  - {fileID: 1315158034}
+  - {fileID: 353837769}
+  - {fileID: 746125410}
+  - {fileID: 1471936478}
   - {fileID: 1778534120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20116,6 +20392,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21187,6 +21467,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -21254,6 +21538,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21461,7 +21749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21604,7 +21892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566695694290898, guid: 3ba35bd1653e346d1a0fbd09c1ece60c, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4851969818332448, guid: 3ba35bd1653e346d1a0fbd09c1ece60c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21717,6 +22005,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21953,7 +22245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22185,6 +22477,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22626,6 +22922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_sand (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -270
@@ -23052,6 +23352,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (31)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -23388,7 +23692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23754,6 +24058,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (26)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -23977,6 +24285,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -24040,6 +24352,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -24561,6 +24877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bus (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -24628,7 +24948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1566695694290898, guid: 3ba35bd1653e346d1a0fbd09c1ece60c, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4851969818332448, guid: 3ba35bd1653e346d1a0fbd09c1ece60c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25123,6 +25443,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -25268,6 +25592,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25416,6 +25744,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (16)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -25495,7 +25827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498293158422717557, guid: 271c59f5814c11d41b085f18b9aacbb8, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 2498293158422717557, guid: 271c59f5814c11d41b085f18b9aacbb8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25740,7 +26072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25819,6 +26151,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26032,6 +26368,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26320,7 +26660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26661,7 +27001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26870,7 +27210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4785179486904736, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26933,6 +27273,10 @@ PrefabInstance:
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_Name
       value: tile-plain_concrete (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27006,7 +27350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27122,6 +27466,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013398243146, guid: ec63a064dbd786c41a053bad759efb21, type: 3}
   m_PrefabInstance: {fileID: 1137559117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1146330272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5570702970413146928, guid: 409371e387a1fcf468bc5ecbcfc3c59d, type: 3}
+  m_PrefabInstance: {fileID: 214552100}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1147208428
 PrefabInstance:
@@ -27350,6 +27699,10 @@ PrefabInstance:
     - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_Name
       value: bus (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4190281228603930, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27642,6 +27995,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_concrete (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 120
@@ -27706,6 +28063,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27842,6 +28203,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27994,6 +28359,10 @@ PrefabInstance:
     - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
       propertyPath: m_Name
       value: bus-stop (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28152,6 +28521,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -28290,6 +28663,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28563,6 +28940,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8914478960847706909, guid: e35df0e491f84ce428b1e53d84673cb6, type: 3}
   m_PrefabInstance: {fileID: 1854167058}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1194817550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 1155166582}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1195604286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28577,7 +28959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28657,7 +29039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28731,7 +29113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28966,6 +29348,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29411,7 +29797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29477,7 +29863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29539,6 +29925,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29671,6 +30061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_sand (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -300
@@ -29739,7 +30133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30342,6 +30736,10 @@ PrefabInstance:
     - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-road-intersection-t (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30971,6 +31369,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -31080,6 +31482,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31488,7 +31894,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 832216847}
     m_Modifications:
     - target: {fileID: 4842440002672252798, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_Materials.Array.data[4]
@@ -31512,7 +31918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalRotation.y
@@ -31520,7 +31926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31540,13 +31946,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6355478434394961579, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
+--- !u!4 &1315158034 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6014805079040994321, guid: 284a3e823ee34a444852c1da23ee1469, type: 3}
+  m_PrefabInstance: {fileID: 1315158033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1316771765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31749,7 +32160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32163,6 +32574,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -32398,7 +32813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32456,6 +32871,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32588,6 +33007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_sand (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -210
@@ -32648,6 +33071,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -32797,6 +33224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_concrete (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 120
@@ -32850,6 +33281,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 963063524129386968, guid: 1ccae6125fbc82e4a99470df847bde43, type: 3}
   m_PrefabInstance: {fileID: 17987158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1388340652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 1644769127}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1389316873
 GameObject:
@@ -33677,7 +34113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34063,6 +34499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_sand (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 180
@@ -34200,7 +34640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34499,7 +34939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34665,7 +35105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34735,6 +35175,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35104,7 +35548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35257,6 +35701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bus (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4190281228603930, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalPosition.z
       value: -5.99
@@ -35347,6 +35795,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -35418,6 +35870,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35552,7 +36008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -35633,6 +36089,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -35692,7 +36152,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 832216847}
     m_Modifications:
     - target: {fileID: 1266873314666084133, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35712,15 +36172,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1266873314666084133, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1266873314666084133, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1266873314666084133, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1266873314666084133, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35738,11 +36198,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-runway-intersection-nb
       objectReference: {fileID: 0}
+    - target: {fileID: 1936273227389578655, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
+--- !u!4 &1471936478 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1266873314666084133, guid: 90b08eb60d1e811428c41850ad8ed8a2, type: 3}
+  m_PrefabInstance: {fileID: 1471936477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1473609542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4508453612489127793, guid: 00e16a692dcdc0e4aaf17f63939c5f96, type: 3}
@@ -35906,7 +36375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36238,6 +36707,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -36527,6 +37000,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -36586,6 +37063,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36720,7 +37201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730936710, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37084,7 +37565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -37208,6 +37689,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7161004319230823422, guid: b7bc9dcc0debc2b4d923a98bfa5b5b7a, type: 3}
   m_PrefabInstance: {fileID: 1522937886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1523915556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 1023942907}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1525463940
 PrefabInstance:
@@ -37546,6 +38032,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (11)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -37779,6 +38269,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38240,7 +38734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38396,6 +38890,10 @@ PrefabInstance:
     - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
       propertyPath: m_Name
       value: bus-stop (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1065974225765551761, guid: 73781fb24b9528440ba66a70cc694d3c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38640,7 +39138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38732,7 +39230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -39041,6 +39539,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -39333,6 +39835,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -39552,7 +40058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -39770,7 +40276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -39833,6 +40339,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -39911,6 +40421,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40051,7 +40565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40325,6 +40839,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bus (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -40393,6 +40911,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -40466,7 +40988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -40931,6 +41453,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -41181,7 +41707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41282,7 +41808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6389780277532430638, guid: 1167bf001fc67214a845d2214dea7dd4, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41784,6 +42310,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -42131,6 +42661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_concrete (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -120
@@ -42357,6 +42891,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (25)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -42501,7 +43039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498293158422717557, guid: 271c59f5814c11d41b085f18b9aacbb8, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 2498293158422717557, guid: 271c59f5814c11d41b085f18b9aacbb8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -42691,6 +43229,10 @@ PrefabInstance:
     - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-road-intersection-t (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42930,6 +43472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_concrete (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -240
@@ -43046,7 +43592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4485210420748912762, guid: fff850cc16fa72841b15e0cd496a3212, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4485210420748912762, guid: fff850cc16fa72841b15e0cd496a3212, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -43120,6 +43666,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -43186,7 +43736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -43272,6 +43822,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -43342,6 +43896,10 @@ PrefabInstance:
     - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_Name
       value: bus (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4373135591367750, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_RootOrder
@@ -43484,7 +44042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -43628,7 +44186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44301,6 +44859,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -44579,7 +45141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44887,6 +45449,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -45103,6 +45669,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (13)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -45182,7 +45752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -45260,7 +45830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141742654962860455, guid: e35df0e491f84ce428b1e53d84673cb6, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 8914478960847706909, guid: e35df0e491f84ce428b1e53d84673cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45330,7 +45900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -45474,7 +46044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45537,6 +46107,10 @@ PrefabInstance:
     - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_Name
       value: bus (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4190281228603930, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46005,6 +46579,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -46504,7 +47082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -46674,6 +47252,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -46752,6 +47334,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -46972,6 +47558,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -47042,7 +47632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47312,6 +47902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-mainroad-road-intersection-t (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2374395948781378512, guid: 7ea223eeb9c13be4b8b958f5fdbd8eb1, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47322,6 +47916,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6609372508730970534, guid: 79083873821eea9468fa981568eee21b, type: 3}
   m_PrefabInstance: {fileID: 1327127971}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1910362061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910362063}
+  - component: {fileID: 1910362062}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Terrain
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1910362062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910362061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e4e8b0c9fb6544f9bc518f2e82afbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areObjectsVisible: 1
+  targetObjects:
+  - {fileID: 1194817550}
+  - {fileID: 181717743}
+  - {fileID: 2024465125}
+  - {fileID: 1388340652}
+  - {fileID: 1959214390}
+  - {fileID: 58488180}
+  - {fileID: 1523915556}
+  - {fileID: 823197366}
+  - {fileID: 360627201}
+  - {fileID: 181432697}
+  - {fileID: 408170180}
+  - {fileID: 1146330272}
+--- !u!4 &1910362063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910362061}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 143.9, y: -0.32, z: -85}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1913067348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47336,7 +47988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47397,7 +48049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1584619070152842, guid: 31be3ba78a561484bb6193bc06e13d7a, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4543445586343508, guid: 31be3ba78a561484bb6193bc06e13d7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47467,7 +48119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -47576,7 +48228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47669,6 +48321,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -47851,7 +48507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -47933,7 +48589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -48142,6 +48798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile-plain_concrete (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60
@@ -48191,6 +48851,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+--- !u!1 &1959214390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 511362085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1960074487
 GameObject:
   m_ObjectHideFlags: 0
@@ -48225,13 +48890,13 @@ Transform:
   - {fileID: 8136546481507471544}
   - {fileID: 1863654434}
   - {fileID: 459786647}
-  - {fileID: 1695222758}
   - {fileID: 615119893}
-  - {fileID: 48136190}
-  - {fileID: 1744127061}
-  - {fileID: 495912012}
   - {fileID: 994404039}
+  - {fileID: 1744127061}
+  - {fileID: 48136190}
+  - {fileID: 495912012}
   - {fileID: 1133587550}
+  - {fileID: 1695222758}
   - {fileID: 661194499}
   - {fileID: 655270362}
   - {fileID: 1840990865}
@@ -48500,7 +49165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48562,6 +49227,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -48797,7 +49466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4755125321900414, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48998,6 +49667,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (19)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -49180,6 +49853,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (8)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -49339,7 +50016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -49607,7 +50284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1962112057092706, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4985220069815420, guid: 10559c3c45c9e4714b032dc317910152, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49675,6 +50352,10 @@ PrefabInstance:
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_Name
       value: tile-plain_concrete (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49813,7 +50494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1189697016854918, guid: e1304517d24a34d348e58d276929bd24, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -50059,7 +50740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5842737361199678983, guid: 6e20eed2b08a2a64090d6db94e42104d, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 6511714679403158717, guid: 6e20eed2b08a2a64090d6db94e42104d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50122,6 +50803,10 @@ PrefabInstance:
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_Name
       value: tile-mainroad-intersection (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -50424,6 +51109,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -50555,6 +51244,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 417072, guid: e249c30ff85e94249b2d74951bcbde63, type: 3}
   m_PrefabInstance: {fileID: 2018171425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2024465125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300031234415390, guid: 5c0bb1a21161f4a8f964a691cc1310e7, type: 3}
+  m_PrefabInstance: {fileID: 1467245492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2025430436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50569,7 +51263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280895154274707624, guid: 132bab4eddbf7424d92a5a193c641969, type: 3}
       propertyPath: m_TagString
-      value: Train
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 3280895154275202184, guid: 132bab4eddbf7424d92a5a193c641969, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50634,7 +51328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -50700,7 +51394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3280895154274707624, guid: 132bab4eddbf7424d92a5a193c641969, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 3280895154275202184, guid: 132bab4eddbf7424d92a5a193c641969, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50923,7 +51617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -51091,6 +51785,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -51436,7 +52134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -51755,7 +52453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1871174464052898, guid: ad9d3c1bf87264ed8a89c188f2c1018c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -51818,6 +52516,10 @@ PrefabInstance:
     - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_Name
       value: tile-plain_sand (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782367695282770, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4412102052578102, guid: 7b692aaf4d2f24f65a9b0cfd4c7bdf2c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51888,6 +52590,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -52578,7 +53284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152315849743070, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_TagString
-      value: Terrain
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4034336420200126, guid: d9ecf073012ed423aa1bca266513310b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52645,6 +53351,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -52948,6 +53658,10 @@ PrefabInstance:
     - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_Name
       value: tile-plain_concrete (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870627807777496, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 4753532892958936, guid: 694c23563628a4178bcd3bf91226687b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53338,6 +54052,10 @@ PrefabInstance:
       value: tile-mainroad-intersection (21)
       objectReference: {fileID: 0}
     - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109849741087532, guid: 1c2c97d44483d40bb944f369f60436c2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -53409,6 +54127,10 @@ PrefabInstance:
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
+      propertyPath: m_TagString
+      value: LevelCrossing
       objectReference: {fileID: 0}
     - target: {fileID: 1075509480121184, guid: 494957db1966c4528a98d8c72a75f577, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -55894,6 +56616,7 @@ SceneRoots:
   - {fileID: 1919872947}
   - {fileID: 722405005}
   - {fileID: 791052626}
+  - {fileID: 1910362063}
   - {fileID: 7093283483683377836}
   - {fileID: 5834990018905013667}
   - {fileID: 4925075295628579735}
@@ -55910,7 +56633,3 @@ SceneRoots:
   - {fileID: 711116062}
   - {fileID: 1744065290}
   - {fileID: 1828449939}
-  - {fileID: 1315158033}
-  - {fileID: 353837768}
-  - {fileID: 746125409}
-  - {fileID: 1471936477}
