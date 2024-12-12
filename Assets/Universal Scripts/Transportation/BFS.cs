@@ -124,7 +124,7 @@ public class BFS : MonoBehaviour
             GameObject connector = Instantiate(connectorPrefab);
             connector.transform.position = midPoint;
             connector.transform.rotation = Quaternion.LookRotation(direction);
-            connector.transform.localScale = new Vector3(routeWidth, routeWidth, direction.magnitude);
+            connector.transform.localScale = new Vector3(routeWidth, routeWidth/7, direction.magnitude);
             
             connector.GetComponent<MeshRenderer>().material.SetColor("_Color", node.GetRouteColor());
         }
@@ -223,8 +223,10 @@ public class BFS : MonoBehaviour
     //My Code:
     List<Node> blueRoute = new List<Node>();
     List<Node> redRoute = new List<Node>();
+    List<Node> purpleRoute = new List<Node>();
+    List<Node> orangeRoute = new List<Node>();
 
-    void Start() 
+    /*void Start() 
     {
         Color node_route_color;
         
@@ -263,26 +265,6 @@ public class BFS : MonoBehaviour
             DrawConnections(_graph[6]);
             DrawConnections(_graph[7]);
 
-            //for (int i=0; i <_graph.Count; i++)
-            //{
-            //    if (i%2 == 0)
-            //    {
-            //        redRoute.Add(_graph[i]);
-            //        node_route_color = routeColors[0].color;
-            //        ActivateNode(_graph[i], redRoute, node_route_color);
-            //        print("!!!");
-            //    }
-            //    else
-            //    {
-            //        blueRoute.Add(_graph[i]);
-            //        node_route_color = routeColors[1].color;
-            //        ActivateNode(_graph[i], blueRoute, node_route_color);
-            //    }
-
-            //    // ActivateNode(_graph[i], null, node_route_color);
-            //}
-
-            // to find all Route Colors:
             foreach (RouteColor routeColor in routeColors)
             {
                 Debug.Log($"!Name: {routeColor.name}, Color: {routeColor.color}, State: {routeColor.state}");
@@ -292,7 +274,51 @@ public class BFS : MonoBehaviour
         } else {
             Debug.LogError("Graph is empty. Ensure nodes are assigned.");
         }
+    }*/
+void Start()
+{
+    if (_graph.Count > 0)
+    {
+        print("!!!!! " + _graph.Count);
+
+        // Define custom colors
+         //Color purple = new Color(0.5f, 0f, 0.5f); // RGB for purple
+         //Color orange = new Color(1f, 0.65f, 0f);  // RGB for orange
+         Color purple, pink;
+         ColorUtility.TryParseHtmlString("#800080", out purple); // Hex for purple
+         ColorUtility.TryParseHtmlString("#FF6663", out pink); // Hex for orange
+
+
+        // Define connections
+          CreateConnections(new int[] { 0, 1, 2, 3, 0 }, Color.red);
+          CreateConnections(new int[] { 4, 5, 6, 7, 4 }, Color.blue);
+          CreateConnections(new int[] { 8, 9, 10, 11, 8 }, purple);
+          CreateConnections(new int[] { 12, 13, 14, 15, 12 }, pink);
+
+        // Log route colors
+        foreach (RouteColor routeColor in routeColors)
+        {
+            Debug.Log($"!Name: {routeColor.name}, Color: {routeColor.color}, State: {routeColor.state}");
+        }
+
+        Debug.Log("Activated nodes and drew connections.");
     }
+    else
+    {
+        Debug.LogError("Graph is empty. Ensure nodes are assigned.");
+    }
+}
+
+    // Utility to create connections and set colors
+    void CreateConnections(int[] indices, Color routeColor)
+{
+    for (int i = 0; i < indices.Length - 1; i++)
+    {
+        _graph[indices[i]].AddConnection(_graph[indices[i + 1]]);
+        _graph[indices[i]].SetRouteColor(routeColor);
+        DrawConnections(_graph[indices[i]]);
+    }
+}
 
 
 
