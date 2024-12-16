@@ -51,19 +51,14 @@ public class SwipeMenu : MonoBehaviour {
     void comparePosition() {
         // store new position as transformed value
         storePosition("update");
-                
-        Debug.Log("Compare Call");
         
         // if new position differs by a vertical value and velocity greater than 15 "units" and the hand is pinching open or close the menu depending on the direction 
         // -15 means the hand went up
         if((GetComponent<MenuManager>().leftHand != null && GetComponent<MenuManager>().leftHand.IsTracked) || (GetComponent<MenuManager>().LeftControllerAnchor != null)) {
-            Debug.Log(((p0 - p1) / Time.deltaTime));
             
             // p0 is initial state and p1 is updated state
             if(((p0 - p1) / Time.deltaTime) > 15.0 && GetComponent<MenuManager>().isIndexFingerPinching && !GetComponent<MenuManager>()._menuActive) {
                 playSound(open);
-                
-                Debug.Log("Menu Opened");
                 
                 GetComponent<MenuManager>()._menuActive = Instantiate(GetComponent<MenuManager>().menuPrefab);
 
@@ -73,9 +68,6 @@ public class SwipeMenu : MonoBehaviour {
                 
                 // store init
                 storePosition("init");
-
-                // testing
-                Debug.Log("Menu opened");
             }
 
             if(((p0 - p1) / Time.deltaTime) < -15.0 && GetComponent<MenuManager>().isIndexFingerPinching && GetComponent<MenuManager>()._menuActive) {
@@ -90,13 +82,10 @@ public class SwipeMenu : MonoBehaviour {
     void Update() {
         // This is so we're not always setting the initial position otherwise the player's movement would have to be impossibly quick to open the menu
         updateCounter++;
-
-        Debug.Log(GetComponent<MenuManager>().leftHand.IsTracked);
         
         if(GetComponent<MenuManager>().leftHand.IsTracked || (GetComponent<MenuManager>().LeftControllerAnchor != null)) {
             // Pinching is part of the gesture to open the menu
             GetComponent<MenuManager>().isIndexFingerPinching = GetComponent<MenuManager>().leftHand.GetFingerIsPinching(OVRHand.HandFinger.Index) || OVRInput.Get(OVRInput.RawButton.LIndexTrigger);
-            Debug.Log(GetComponent<MenuManager>().isIndexFingerPinching);
         }
 
         // store init before two counts if it's not currently stored

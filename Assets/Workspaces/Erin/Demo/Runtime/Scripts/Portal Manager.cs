@@ -19,8 +19,8 @@ public class PortalManager : MonoBehaviour {
         _openPortal = Instantiate(_portal);
         
         foreach (Transform child in _openPortal.GetComponent<Transform>()) {
-            if(child.name == "Orange Portal") child.transform.position = portal2;
-            if(child.name == "Blue Portal") child.transform.position = portal1;
+            if(child.name == "Orange") child.transform.position = portal2;
+            if(child.name == "Blue") child.transform.position = portal1;
         }
     }
 }
