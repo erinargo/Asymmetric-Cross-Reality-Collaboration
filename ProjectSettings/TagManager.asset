@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Terrain
+  - Train
+  - Crosswalk
+  - TrafficLight
+  - TrafficLightCrosswalk
+  - Car
+  - Human
+  - LevelCrossing
   layers:
   - Default
   - TransparentFX
