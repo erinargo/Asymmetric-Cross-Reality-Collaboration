@@ -23,4 +23,6 @@ public class PortalManager : MonoBehaviour {
             if(child.name == "Blue") child.transform.position = portal1;
         }
     }
+    
+    
 }

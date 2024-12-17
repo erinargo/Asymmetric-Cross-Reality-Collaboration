@@ -6,7 +6,7 @@ using UnityEngine;
 public class PassthroughManager : MonoBehaviour {
     public static PassthroughManager Singleton { get; private set; }
 
-    private bool passthroughOn = true;
+    public bool passthroughOn = true;
     private OVRCameraRig rig;
     
     [SerializeField] private OVRPassthroughLayer layer;
