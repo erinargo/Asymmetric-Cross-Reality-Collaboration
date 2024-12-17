@@ -31,7 +31,7 @@ public class MenuManager : MonoBehaviour {
     [Space]
     [SerializeField] private bool _invert;
 
-    void Start() { // Expensive but only once. 
+    void Awake() { // Expensive but only once. 
         leftHand = 
             OVRManager.instance.gameObject.GetComponentsInChildren<OVRHand>()
                 .FirstOrDefault(h => h.GetHand() == OVRPlugin.Hand.HandLeft ? h : null); 
