@@ -23,21 +23,22 @@ public class Portal_Teleport : MonoBehaviour {
     }
 
     void Teleport() {
-        GameManager.Singleton.SpawnPlayerObject(camera.position);
+        _portalReceiver.canTeleport = false;
+        
+        //GameManager.Singleton.SpawnPlayerObject(camera.position);
         
         if (AR_VR) PassthroughManager.Singleton.Toggle();
-        
-        _portalReceiver.canTeleport = false;
 
         var translatedPosition = new Vector3(
-            _playerOrigin.position.x + (transform.position.x - camera.position.x), 
-            _playerOrigin.position.y, 
-            _playerOrigin.position.z + (transform.position.z - camera.position.z));
+            transform.position.x, 
+            _playerOrigin.transform.position.y, 
+            transform.position.z
+            );
 
         _playerOrigin.position = translatedPosition;
         _playerOrigin.rotation = Quaternion.Euler(
             _playerOrigin.rotation.eulerAngles.x,
-            _playerOrigin.rotation.eulerAngles.y + (transform.rotation.eulerAngles.y - camera.rotation.eulerAngles.y) + 180f,
+            _playerOrigin.rotation.eulerAngles.y + (transform.rotation.eulerAngles.y - camera.rotation.eulerAngles.y),
             _playerOrigin.rotation.eulerAngles.z
         );
     }
