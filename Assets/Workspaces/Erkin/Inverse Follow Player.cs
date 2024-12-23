@@ -75,6 +75,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
     }
 
     void LateUpdate() {
+        if(!IsOwner) Destroy(this); // try harder
         if(IsOwner) isPlayerAR.Value = PassthroughManager.Singleton.passthroughOn;
         
         if (isPlayerAR.Value) {
@@ -84,8 +85,10 @@ public class InverseFollowPlayer : NetworkBehaviour {
     }
         
     void Update() {
-        if (_mapPos.Value) CalculateMinimapInversePosition();
-        if (_truePos.Value) CalculateTrueInversePosition();
+        if (_mapPos.Value && IsOwner) CalculateMinimapInversePosition();
+        if (_truePos.Value && IsOwner) CalculateTrueInversePosition();
+        
+        if(!IsOwner) DrawConnections(transform, _otherPlayerPrefab.transform);
     }
     
 }
