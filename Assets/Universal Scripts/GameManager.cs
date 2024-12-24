@@ -4,7 +4,7 @@ using UnityEngine;
 using Meta.XR.MRUtilityKit;
 using Unity.Netcode;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : NetworkBehaviour {
     [SerializeField] public NetworkObject playerPrefab;
     
     public static GameManager Singleton { get; private set; }
@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private GameObject city;
     [SerializeField] public GameObject connectorPrefab;
+
+    [SerializeField] public Transform colocator;
+    
     void Awake() {
         if (Singleton != null && Singleton != this) Destroy(this.gameObject);
         else Singleton = this;
@@ -24,8 +27,16 @@ public class GameManager : MonoBehaviour {
     
     [ServerRpc(RequireOwnership = false)] 
     public void SpawnPlayerObjectServerRpc(ulong clientId, Vector3 truePos, ServerRpcParams serverRpcParams = default) {
+        if (!IsServer) return; 
+        
         NetworkObject playerObject1 = Instantiate(GameManager.Singleton.playerPrefab);
         NetworkObject playerObject2 = Instantiate(GameManager.Singleton.playerPrefab);
+        
+        playerObject1.transform.SetParent(colocator);
+        playerObject2.transform.SetParent(colocator);
+
+        playerObject1.transform.localScale = GameManager.Singleton.playerPrefab.transform.localScale;
+        playerObject2.transform.localScale = GameManager.Singleton.playerPrefab.transform.localScale;
         
         playerObject1.SpawnWithOwnership(clientId);
         playerObject2.SpawnWithOwnership(clientId);
