@@ -9,7 +9,7 @@ public class LagFixer : MonoBehaviour {
     void Update() {
         if (!set) {
             foreach (var child in GetComponentsInChildren<Transform>(true)) 
-                child.gameObject.SetActive(true);
+                if(!child.gameObject.activeSelf) child.gameObject.SetActive(true);
 
             set = true;
         }
