@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Workspaces/Sample Scenes/Interactions.unity
     guid: 634967b50c36fe64cb8a7c993caa680e
+  - enabled: 1
+    path: Assets/Workspaces/Erkin/Demo_Erkin.unity
+    guid: 47ffc461e878cfd479a56fb795fc62c9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c27e272ada6648c4da20537c0b6b847d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 87cc2d4e6d61ecc48a3daa3b29ea3a0f, type: 2}

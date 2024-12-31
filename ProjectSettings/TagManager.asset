@@ -12,6 +12,7 @@ TagManager:
   - Car
   - Human
   - LevelCrossing
+  - Tree
   layers:
   - Default
   - TransparentFX
