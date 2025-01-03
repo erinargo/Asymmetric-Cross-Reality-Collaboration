@@ -12,6 +12,9 @@ public class InverseFollowPlayer : NetworkBehaviour {
     public NetworkVariable<bool> _mapPos = new(writePerm: NetworkVariableWritePermission.Server);
     public NetworkVariable<bool> _truePos = new(writePerm: NetworkVariableWritePermission.Server);
     public NetworkVariable<bool> isPlayerAR = new(writePerm: NetworkVariableWritePermission.Owner);
+
+    private NetworkVariable<Vector3> _netPos = new(writePerm: NetworkVariableWritePermission.Owner);
+    private NetworkVariable<Vector3> _netScale = new(writePerm: NetworkVariableWritePermission.Owner);
     
     private InverseFollowPlayer _otherPlayerPrefab;
 
@@ -32,6 +35,8 @@ public class InverseFollowPlayer : NetworkBehaviour {
             newOriginPos = new GameObject("originPos");
             newOriginPos.transform.position = GameManager.Singleton.mainCamera.transform.position;
         }
+
+        if (IsOwner) _netScale.Value = new Vector3(1, 1, 1);
     }
 
 
@@ -46,8 +51,10 @@ public class InverseFollowPlayer : NetworkBehaviour {
         
         Vector3 adjustedPos = new Vector3(transform.position.x, minimap.position.y, transform.position.z);
         transform.position = adjustedPos;
+        _netPos.Value = adjustedPos;
         
         transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        _netScale.Value = new Vector3(0.01f, 0.01f, 0.01f);
         
         DrawConnections(transform, _otherPlayerPrefab.transform);
     }
@@ -55,6 +62,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
     void CalculateTrueInversePosition() {
         Vector3 offset = GameManager.Singleton.mainCamera.transform.position - newOriginPos.transform.position;
         transform.position = origin.Value + offset;
+        _netPos.Value = origin.Value + offset;
     }
 
     void DrawConnections(Transform start, Transform end) {       
@@ -69,26 +77,30 @@ public class InverseFollowPlayer : NetworkBehaviour {
         line.transform.localScale = new Vector3(0.002f, 0.002f, direction.magnitude);                     
     }
 
-    [ServerRpc(RequireOwnership = true)]
-    public void CleanUpServerRpc(ServerRpcParams serverRpcParams = default) {
-        NetworkObject.Despawn(gameObject);
-    }
-
     void LateUpdate() {
-        if(!IsOwner) Destroy(this); // try harder
-        if(IsOwner) isPlayerAR.Value = PassthroughManager.Singleton.passthroughOn;
+        if (IsOwner) isPlayerAR.Value = PassthroughManager.Singleton.passthroughOn;
         
         if (isPlayerAR.Value) {
-            if(line != null) Destroy(line);
-            if (IsOwner) CleanUpServerRpc();
+            if (line != null) Destroy(line);
+            gameObject.SetActive(false);
         }
     }
         
     void Update() {
         if (_mapPos.Value && IsOwner) CalculateMinimapInversePosition();
         if (_truePos.Value && IsOwner) CalculateTrueInversePosition();
+
+
+        if (!IsOwner) {
+            transform.position = _netPos.Value;
+            transform.localScale = _netScale.Value;
+        } 
+        // I promise on my life, existence, and soul in the event that I do actually have one that this is necessary 
+        // and not redundant.
+        // and I do also promise on the same terms that the person reading this does *not* want to know why
+        // down that path lay madness
         
-        if(!IsOwner) DrawConnections(transform, _otherPlayerPrefab.transform);
+        if (!IsOwner) DrawConnections(transform, _otherPlayerPrefab.transform);
     }
     
 }
