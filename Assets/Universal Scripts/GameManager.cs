@@ -15,7 +15,7 @@ public class GameManager : NetworkBehaviour {
     
     public GameObject player;
 
-    [SerializeField] private GameObject city;
+    [SerializeField] private Transform windowOfTime;
     [SerializeField] public GameObject connectorPrefab;
 
     [SerializeField] public Transform colocator;
@@ -67,7 +67,5 @@ public class GameManager : NetworkBehaviour {
                 }
             }
         }
-        
-        //if(closestTable != null) Instantiate(city, closestTable);
     }
 }
