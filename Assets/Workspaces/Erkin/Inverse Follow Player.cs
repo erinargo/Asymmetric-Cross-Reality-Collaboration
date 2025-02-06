@@ -61,8 +61,8 @@ public class InverseFollowPlayer : NetworkBehaviour {
 
     void CalculateTrueInversePosition() {
         Vector3 offset = GameManager.Singleton.mainCamera.transform.position - newOriginPos.transform.position;
-        transform.position = origin.Value + offset;
-        _netPos.Value = origin.Value + offset;
+        transform.position = origin.Value - offset;
+        _netPos.Value = transform.position;
     }
 
     void DrawConnections(Transform start, Transform end) {       

@@ -6,13 +6,17 @@ using UnityEngine;
 public class MenuItems : MonoBehaviour {
     enum ItemType {
         Window,
-        Placeable
+        Placeable,
+        Bus,
+        Bike // Added new item types
     }
-
+    
     enum State {
         PickedUp,
         Placed
     }
+
+    [SerializeField] private Transform snapPoint; // Define snap points in the scene
 
     [SerializeField] private ItemType item;
     [SerializeField] private Vector3 resizeVal;
@@ -45,8 +49,12 @@ public class MenuItems : MonoBehaviour {
     public void PickUp() {
         transform.parent = null;
 
-        if (item == ItemType.Placeable) transform.localScale = resizeVal;
+        if (item == ItemType.Placeable) transform.localScale = resizeVal; // 
         state = State.PickedUp;
+    }
+
+    public void PutDown() {
+        state = State.Placed;
     }
 
     public void ResizeToggle() {
@@ -81,9 +89,12 @@ public class MenuItems : MonoBehaviour {
             lastSize = new Vector3(normalSizex, normalSizey, normalSizez);
         }
 
-        if (disToMap <= 0.2f) ; // activate
+        if (disToMap <= 0.2f && state == State.Placed && item != ItemType.Window) {
+            transform.position = snapPoint.position;
+            transform.rotation = snapPoint.rotation;
+        }
 
-        if (disToMenu <= 0.2f && !resizeActive && menuActive && state == State.PickedUp) {
+        if (disToMenu <= 0.2f && !resizeActive && menuActive && state == State.PickedUp && (item != ItemType.Bus && item != ItemType.Bike)) {
             gameObject.transform.parent = originalParent;
             
             gameObject.transform.localPosition = originalPosition;

@@ -24,5 +24,18 @@ public class PortalManager : MonoBehaviour {
         }
     }
     
+    public void Open(Vector3 portal1, Vector3 portal2, Quaternion portalRotation) {
+        if(_openPortal != null) Destroy(_openPortal);
+        
+        _openPortal = Instantiate(_portal);
+        
+        foreach (Transform child in _openPortal.GetComponent<Transform>()) {
+            if(child.name == "Orange") child.transform.position = portal2;
+            if (child.name == "Blue") {
+                child.transform.position = portal1;
+                child.transform.rotation = portalRotation;
+            }
+        }
+    }
     
 }

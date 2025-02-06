@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Workspaces/Erin/Demo/Runtime/Demo.unity
     guid: ee00b3f40e34a9b4b828472f9e98f8ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Workspaces/Erin/Hand Menu/Runtime/Hand Menu.unity
     guid: 89ac64ff9f3545d439cbfdc8bdbf5f6f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Workspaces/Sample Scenes/Interactions.unity
     guid: 634967b50c36fe64cb8a7c993caa680e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Workspaces/Erkin/Demo_Erkin.unity
     guid: 47ffc461e878cfd479a56fb795fc62c9
   m_configObjects:
