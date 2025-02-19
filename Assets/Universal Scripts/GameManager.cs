@@ -11,6 +11,8 @@ public class GameManager : NetworkBehaviour {
     public OVRCameraRig ovrCameraRig;
     public Transform minimap;
     public Transform realMap;
+
+    public Vector3 realOrigin;
     
     public GameObject player;
 

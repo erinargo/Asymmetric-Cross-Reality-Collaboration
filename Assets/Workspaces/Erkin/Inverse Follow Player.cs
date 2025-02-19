@@ -15,12 +15,14 @@ public class InverseFollowPlayer : NetworkBehaviour {
 
     private NetworkVariable<Vector3> _netPos = new(writePerm: NetworkVariableWritePermission.Owner);
     private NetworkVariable<Vector3> _netScale = new(writePerm: NetworkVariableWritePermission.Owner);
+    private NetworkVariable<Vector3> _netRot = new(writePerm: NetworkVariableWritePermission.Owner);
     
     private InverseFollowPlayer _otherPlayerPrefab;
 
     private GameObject line;
 
-    private GameObject newOriginPos;
+    private GameObject mapOrigin;
+    private GameObject realOrigin;
     
     void Start() {
         minimap = GameManager.Singleton.minimap;
@@ -32,8 +34,11 @@ public class InverseFollowPlayer : NetworkBehaviour {
         }
 
         if (_truePos.Value) {
-            newOriginPos = new GameObject("originPos");
-            newOriginPos.transform.position = GameManager.Singleton.mainCamera.transform.position;
+            mapOrigin = new GameObject("originPos");
+            mapOrigin.transform.position = GameManager.Singleton.mainCamera.transform.position;
+
+            realOrigin = new GameObject("originPos");
+            realOrigin.transform.position = GameManager.Singleton.realOrigin;
         }
 
         if (IsOwner) _netScale.Value = new Vector3(1, 1, 1);
@@ -47,22 +52,22 @@ public class InverseFollowPlayer : NetworkBehaviour {
         playerOffset.y = 0;
         playerOffset.z *= 0.001f;
         
-        transform.position = (minimap.position + playerOffset);
         
-        Vector3 adjustedPos = new Vector3(transform.position.x, minimap.position.y, transform.position.z);
-        transform.position = adjustedPos;
+        Vector3 pos = (minimap.position + playerOffset);
+        
+        Vector3 adjustedPos = new Vector3(pos.x, minimap.position.y, pos.z);
         _netPos.Value = adjustedPos;
-        
-        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         _netScale.Value = new Vector3(0.01f, 0.01f, 0.01f);
         
         DrawConnections(transform, _otherPlayerPrefab.transform);
     }
 
     void CalculateTrueInversePosition() {
-        Vector3 offset = GameManager.Singleton.mainCamera.transform.position - newOriginPos.transform.position;
-        transform.position = origin.Value - offset;
-        _netPos.Value = transform.position;
+        Vector3 relativeToCamera = mapOrigin.transform.InverseTransformPoint(GameManager.Singleton.mainCamera.transform.position);
+        _netPos.Value = realOrigin.transform.TransformPoint(relativeToCamera);
+        
+        Vector3 relativeRotation = mapOrigin.transform.TransformDirection(GameManager.Singleton.mainCamera.transform.forward);
+        _netRot.Value = realOrigin.transform.TransformDirection(relativeRotation);
     }
 
     void DrawConnections(Transform start, Transform end) {       
@@ -89,16 +94,10 @@ public class InverseFollowPlayer : NetworkBehaviour {
     void Update() {
         if (_mapPos.Value && IsOwner) CalculateMinimapInversePosition();
         if (_truePos.Value && IsOwner) CalculateTrueInversePosition();
-
-
-        if (!IsOwner) {
-            transform.position = _netPos.Value;
-            transform.localScale = _netScale.Value;
-        } 
-        // I promise on my life, existence, and soul in the event that I do actually have one that this is necessary 
-        // and not redundant.
-        // and I do also promise on the same terms that the person reading this does *not* want to know why
-        // down that path lay madness
+        
+        transform.position = _netPos.Value;
+        transform.localScale = _netScale.Value;
+        transform.forward = _netRot.Value;
         
         if (!IsOwner) DrawConnections(transform, _otherPlayerPrefab.transform);
     }

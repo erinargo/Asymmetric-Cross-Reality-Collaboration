@@ -26,6 +26,7 @@ public class Portal_Teleport : MonoBehaviour {
         _portalReceiver.canTeleport = false;
         
         GameManager.Singleton.SpawnPlayerObject(camera.position);
+        GameManager.Singleton.realOrigin = camera.position;
         
         if (AR_VR) PassthroughManager.Singleton.Toggle();
 
