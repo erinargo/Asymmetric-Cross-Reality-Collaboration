@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuItems : MonoBehaviour {
-    enum ItemType {
+    public enum ItemType {
         Window,
-        Placeable,
         Bus,
         Bike // Added new item types
     }
@@ -49,7 +48,7 @@ public class MenuItems : MonoBehaviour {
     public void PickUp() {
         transform.parent = null;
 
-        if (item == ItemType.Placeable) transform.localScale = resizeVal; // 
+        if (item == ItemType.Bike || item == ItemType.Bus) transform.localScale = resizeVal; // maybe rework?
         state = State.PickedUp;
     }
 
@@ -92,9 +91,11 @@ public class MenuItems : MonoBehaviour {
         if (disToMap <= 0.2f && state == State.Placed && item != ItemType.Window) {
             transform.position = snapPoint.position;
             transform.rotation = snapPoint.rotation;
+            
+            // activate
         }
 
-        if (disToMenu <= 0.2f && !resizeActive && menuActive && state == State.PickedUp && (item != ItemType.Bus && item != ItemType.Bike)) {
+        if (disToMenu <= 0.2f && !resizeActive && menuActive && (item != ItemType.Bus && item != ItemType.Bike)) {
             gameObject.transform.parent = originalParent;
             
             gameObject.transform.localPosition = originalPosition;

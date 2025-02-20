@@ -23,6 +23,19 @@ public class GameManager : NetworkBehaviour {
     
     [SerializeField] private NetworkObject networkedCamera;
     [SerializeField] private RenderTexture renderTexture;
+
+    public int car, bus, bike;
+    public int solar, gas;
+    public int recycle;
+
+    [SerializeField] private GameObject BusHolder;
+    [SerializeField] private GameObject CarHolder;
+    [SerializeField] private GameObject PowerPlantHolder;
+    
+    // item -> impact percent
+    [SerializeField] private Dictionary<MenuItems.ItemType, int> impactList = new Dictionary<MenuItems.ItemType, int>();
+
+    public float CarbonImpact = 1.0f; // 0-1
     
     public NetworkList<NetworkObjectReference> connectedCameras = new(writePerm: NetworkVariableWritePermission.Server);
     
@@ -68,6 +81,16 @@ public class GameManager : NetworkBehaviour {
     public void SpawnPlayerObject(Vector3 location) {
         SpawnPlayerObjectServerRpc(NetworkManager.Singleton.LocalClientId, location);
         SpawnCameraServerRpc(NetworkManager.Singleton.LocalClientId);
+    }
+
+    public void Activate(MenuItems.ItemType item) {
+        // calculate carbon impact
+        // tie impact to sliders
+        // toggle visibility
+        
+        //CarbonImpact = 1.0f - ((-(car * 50) + (bus * 33) + (bike * 33) + (solar * 33) + -(gas * 50) + (recycle * 33)) / 100); 
+
+        //if (item == MenuItems.ItemType.Bus) BusHolder.SetActive(!BusHolder.activeSelf);  //GameObject.SetActive(-GameObject.activeSelf);
     }
 
     void Update() {
