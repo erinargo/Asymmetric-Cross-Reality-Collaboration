@@ -44,29 +44,37 @@ public class InverseFollowPlayer : NetworkBehaviour {
         if (IsOwner) _netScale.Value = new Vector3(1, 1, 1);
     }
 
+    float GetMinimapScale() {
+        // Define two reference points
+        Transform realPointA = GameManager.Singleton.realMapBuildings.transform.GetChild(0);
+        Transform realPointB = GameManager.Singleton.realMapBuildings.transform.GetChild(1);
+        Transform minimapPointA = GameManager.Singleton.miniMapBuildings.transform.GetChild(0);
+        Transform minimapPointB = GameManager.Singleton.miniMapBuildings.transform.GetChild(1);
+
+        float realWorldDistance = Vector3.Distance(realPointA.position, realPointB.position);
+        float minimapDistance = Vector3.Distance(minimapPointA.position, minimapPointB.position);
+
+        return minimapDistance / realWorldDistance;
+    }
+    
 
     void CalculateMinimapInversePosition() {
-        Vector3 playerOffset = GameManager.Singleton.mainCamera.transform.position - realMap.transform.position;
-
-        playerOffset.x *= 0.001f;
-        playerOffset.y = 0;
-        playerOffset.z *= 0.001f;
-        
-        
-        Vector3 pos = (minimap.position + playerOffset);
-        
-        Vector3 adjustedPos = new Vector3(pos.x, minimap.position.y, pos.z);
-        _netPos.Value = adjustedPos;
+        float minimapScale = GetMinimapScale();
+        Vector3 relativeToCamera = realMap.transform.InverseTransformPoint(GameManager.Singleton.mainCamera.transform.position);
+        relativeToCamera *= minimapScale;
+        Vector3 minimapPosition = minimap.transform.TransformPoint(relativeToCamera);
+        _netPos.Value = new Vector3(minimapPosition.x, minimap.position.y, minimapPosition.z);
         _netScale.Value = new Vector3(0.01f, 0.01f, 0.01f);
-        
         DrawConnections(transform, _otherPlayerPrefab.transform);
     }
 
     void CalculateTrueInversePosition() {
         Vector3 relativeToCamera = mapOrigin.transform.InverseTransformPoint(GameManager.Singleton.mainCamera.transform.position);
+        relativeToCamera = Vector3.Scale(relativeToCamera, new Vector3(-1, 1, -1));
         _netPos.Value = realOrigin.transform.TransformPoint(relativeToCamera);
         
         Vector3 relativeRotation = mapOrigin.transform.TransformDirection(GameManager.Singleton.mainCamera.transform.forward);
+        relativeRotation = Vector3.Scale(relativeRotation, new Vector3(1, 1, 1));
         _netRot.Value = realOrigin.transform.TransformDirection(relativeRotation);
     }
 
