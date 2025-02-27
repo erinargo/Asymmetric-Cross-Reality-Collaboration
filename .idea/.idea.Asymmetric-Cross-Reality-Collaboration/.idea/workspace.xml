@@ -6706,14 +6706,15 @@
       <change beforePath="$PROJECT_DIR$/../Assets/_Barking_Dog/Readme_Please.txt.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assets/polyperfect.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Universal Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Universal Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Items.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Blue L.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Blue L.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Orange L.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Orange L.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_BurstDebugInformation_DoNotShip/tempburstlibs/arm64-v8a/lib_burst_generated.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo_BurstDebugInformation_DoNotShip/tempburstlibs/arm64-v8a/lib_burst_generated.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/LagFixer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/LagFixer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Scripts/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Scripts/Portal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erkin/Inverse Follow Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erkin/Inverse Follow Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IEEE VR 2025_BurstDebugInformation_DoNotShip/tempburstlibs/arm64-v8a/lib_burst_generated.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Packages/manifest.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Packages/packages-lock.json" beforeDir="false" />
@@ -6832,6 +6833,10 @@
       <workItem from="1739910804725" duration="10000" />
       <workItem from="1739995527483" duration="770000" />
       <workItem from="1739996396355" duration="9047000" />
+      <workItem from="1740439732412" duration="1407000" />
+      <workItem from="1740441583804" duration="1758000" />
+      <workItem from="1740612257895" duration="3119000" />
+      <workItem from="1740684156653" duration="1801000" />
     </task>
     <servers />
   </component>

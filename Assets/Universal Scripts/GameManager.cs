@@ -31,10 +31,12 @@ public class GameManager : NetworkBehaviour {
     [SerializeField] private GameObject BusHolder;
     [SerializeField] private GameObject CarHolder;
     [SerializeField] private GameObject PowerPlantHolder;
-    
-    // item -> impact percent
-    [SerializeField] private Dictionary<MenuItems.ItemType, int> impactList = new Dictionary<MenuItems.ItemType, int>();
 
+    [SerializeField] public GameObject realMapBuildings;
+    [SerializeField] public GameObject miniMapBuildings;
+
+    private int processedCameras = 0;
+    
     public float CarbonImpact = 1.0f; // 0-1
     
     public NetworkList<NetworkObjectReference> connectedCameras = new(writePerm: NetworkVariableWritePermission.Server);
@@ -90,16 +92,18 @@ public class GameManager : NetworkBehaviour {
         
         //CarbonImpact = 1.0f - ((-(car * 50) + (bus * 33) + (bike * 33) + (solar * 33) + -(gas * 50) + (recycle * 33)) / 100); 
 
-        //if (item == MenuItems.ItemType.Bus) BusHolder.SetActive(!BusHolder.activeSelf);  //GameObject.SetActive(-GameObject.activeSelf);
+        //if (item == MenuItems.ItemType.Bus) BusHolder.SetActive(!BusHolder.activeSelf); 
     }
 
     void Update() {
-        foreach (var camera in connectedCameras) {
-            if (camera.TryGet(out NetworkObject cameraObject)) {
-                if(cameraObject.IsOwner) cameraObject.GetComponent<Camera>().targetDisplay = 10;
-                else cameraObject.GetComponent<Camera>().targetTexture = renderTexture;
-            }
+        if (processedCameras == connectedCameras.Count) return;
+        if (connectedCameras[processedCameras].TryGet(out NetworkObject cameraObject)) {
+            processedCameras++;
+            if(cameraObject.IsOwner) cameraObject.GetComponent<Camera>().targetDisplay = 10;
+            else cameraObject.GetComponent<Camera>().targetTexture = renderTexture;
         }
+        //foreach (var camera in connectedCameras) {
+        //}
     }
     
     private void OnDestroy() {
