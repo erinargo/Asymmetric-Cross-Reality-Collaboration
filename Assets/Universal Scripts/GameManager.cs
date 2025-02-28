@@ -97,27 +97,23 @@ public class GameManager : NetworkBehaviour {
         {
         case MenuItems.ItemType.Bus:
             bus = 1;
+            BusHolder.SetActive(!BusHolder.activeSelf);
             break;
         case MenuItems.ItemType.Bike:
             bike = 1;
+            BikeHolder.SetActive(!BikeHolder.activeSelf);
             break;
         case MenuItems.ItemType.Car:
             car = 1;
+            CarHolder.SetActive(!CarHolder.activeSelf);
             break;
         default:
             Debug.Log("Can Not Activate invalid Item");
             break;
         }
 
-        
         CarbonImpact = 1.0f - ((-(car * 50) + (bus * 33) + (bike * 33) + (solar * 33) + -(gas * 50) + (recycle * 33)) / 100); 
 
-        if (item == MenuItems.ItemType.Bus) BusHolder.SetActive(!BusHolder.activeSelf); 
-        if (item == MenuItems.ItemType.Bike) BikeHolder.SetActive(!BikeHolder.activeSelf);
-        if (item == MenuItems.ItemType.Car) CarHolder.SetActive(!CarHolder.activeSelf);
-        // if (item == MenuItems.ItemType.Solar) SolarHolder.SetActive(!SolarHolder.activeSelf);
-        // if (item == MenuItems.ItemType.Gas) GasHolder.SetActive(!GasHolder.activeSelf);
-        // if (item == MenuItems.ItemType.Recycle) RecycleHolder.SetActive(!RecycleHolder.activeSelf);
     }
 
     void Update() {
