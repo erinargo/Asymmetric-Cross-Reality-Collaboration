@@ -30,7 +30,10 @@ public class GameManager : NetworkBehaviour {
 
     [SerializeField] private GameObject BusHolder;
     [SerializeField] private GameObject CarHolder;
-    [SerializeField] private GameObject PowerPlantHolder;
+    [SerializeField] private GameObject BikeHolder;
+    // [SerializeField] private GameObject SolarHolder;
+    // [SerializeField] private GameObject RecycleHolder;
+    // [SerializeField] private GameObject GasHolder;
 
     [SerializeField] public GameObject realMapBuildings;
     [SerializeField] public GameObject miniMapBuildings;
@@ -89,10 +92,32 @@ public class GameManager : NetworkBehaviour {
         // calculate carbon impact
         // tie impact to sliders
         // toggle visibility
-        
-        //CarbonImpact = 1.0f - ((-(car * 50) + (bus * 33) + (bike * 33) + (solar * 33) + -(gas * 50) + (recycle * 33)) / 100); 
 
-        //if (item == MenuItems.ItemType.Bus) BusHolder.SetActive(!BusHolder.activeSelf); 
+        switch(item) 
+        {
+        case MenuItems.ItemType.Bus:
+            bus = 1;
+            break;
+        case MenuItems.ItemType.Bike:
+            bike = 1;
+            break;
+        case MenuItems.ItemType.Car:
+            car = 1;
+            break;
+        default:
+            Debug.Log("Can Not Activate invalid Item");
+            break;
+        }
+
+        
+        CarbonImpact = 1.0f - ((-(car * 50) + (bus * 33) + (bike * 33) + (solar * 33) + -(gas * 50) + (recycle * 33)) / 100); 
+
+        if (item == MenuItems.ItemType.Bus) BusHolder.SetActive(!BusHolder.activeSelf); 
+        if (item == MenuItems.ItemType.Bike) BikeHolder.SetActive(!BikeHolder.activeSelf);
+        if (item == MenuItems.ItemType.Car) CarHolder.SetActive(!CarHolder.activeSelf);
+        // if (item == MenuItems.ItemType.Solar) SolarHolder.SetActive(!SolarHolder.activeSelf);
+        // if (item == MenuItems.ItemType.Gas) GasHolder.SetActive(!GasHolder.activeSelf);
+        // if (item == MenuItems.ItemType.Recycle) RecycleHolder.SetActive(!RecycleHolder.activeSelf);
     }
 
     void Update() {
