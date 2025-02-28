@@ -7,13 +7,16 @@ public class MenuItems : MonoBehaviour {
     public enum ItemType {
         Window,
         Bus,
-        Bike // Added new item types
+        Bike,
+        Car // Added new item types
     }
     
     enum State {
         PickedUp,
         Placed
     }
+
+    [SerializeField] private GameManager gameManager;
 
     [SerializeField] private Transform snapPoint; // Define snap points in the scene
 
@@ -93,9 +96,14 @@ public class MenuItems : MonoBehaviour {
             transform.rotation = snapPoint.rotation;
             
             // activate
+            if (gameManager == null)
+            {
+                gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();;
+            }
+            gameManager.Activate(item);
         }
 
-        if (disToMenu <= 0.2f && !resizeActive && menuActive && (item != ItemType.Bus && item != ItemType.Bike)) {
+        if (disToMenu <= 0.2f && !resizeActive && menuActive && (item != ItemType.Bus && item != ItemType.Bike && item != ItemType.Car)) {
             gameObject.transform.parent = originalParent;
             
             gameObject.transform.localPosition = originalPosition;
