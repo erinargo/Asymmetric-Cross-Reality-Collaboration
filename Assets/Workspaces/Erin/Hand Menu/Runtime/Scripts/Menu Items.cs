@@ -9,17 +9,15 @@ public class MenuItems : MonoBehaviour {
         Bus,
         Bike,
         Car,
-        // Solar,
-        // Gas,
-        // Recycle // Added new item types
+        Solar,
+        Gas,
+        Recycle // Added new item types
     }
     
     enum State {
         PickedUp,
         Placed
     }
-
-    [SerializeField] private GameManager gameManager;
 
     [SerializeField] private Transform snapPoint; // Define snap points in the scene
 
@@ -98,12 +96,7 @@ public class MenuItems : MonoBehaviour {
             transform.position = snapPoint.position;
             transform.rotation = snapPoint.rotation;
             
-            // activate
-            if (gameManager == null)
-            {
-                gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();;
-            }
-            gameManager.Activate(item);
+            GameManager.Singleton.Activate(item);
         }
 
         if (disToMenu <= 0.2f && !resizeActive && menuActive && (item != ItemType.Bus && item != ItemType.Bike && item != ItemType.Car)) {
