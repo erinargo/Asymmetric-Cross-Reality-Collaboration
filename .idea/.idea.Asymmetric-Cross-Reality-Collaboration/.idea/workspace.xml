@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2b3b251-b751-4cf0-b1d5-061a83cd4476" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Universal Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Universal Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Items.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Demo.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +32,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Hanieh/Activation/2/28",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,7 +101,7 @@
       <workItem from="1740441583804" duration="1758000" />
       <workItem from="1740612257895" duration="3119000" />
       <workItem from="1740684156653" duration="1801000" />
-      <workItem from="1740822307476" duration="392000" />
+      <workItem from="1740822307476" duration="2298000" />
     </task>
     <servers />
   </component>
