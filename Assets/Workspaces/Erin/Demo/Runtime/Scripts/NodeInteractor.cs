@@ -12,7 +12,7 @@ public class NodeInteractor : MonoBehaviour {
 
     public void OpenPortal() {
         PortalManager.Singleton.Open(GameManager.Singleton.minimap.transform.position + (new Vector3(1, 0, 1)), //(playerPosition.position - new Vector3(1f, -1, 1f)), 
-            (target.position - new Vector3(1, -1, 1)));
+            (target.position - new Vector3(1, -1, 1)), target);
     }
 
 }

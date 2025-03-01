@@ -20,17 +20,19 @@ public class SwipeMenu : MonoBehaviour {
 
     private bool stored;
 
+    [SerializeField] private MenuManager menuManager;
+
     public void playSound(AudioSource sound) {
         if(sound != null) sound.Play();
     }
 
     void storePosition (string state) {
         // Null Object Detector
-        if(GetComponent<MenuManager>().leftHand == null && GetComponent<MenuManager>().LeftControllerAnchor == null) return;
+        if(menuManager.leftHand == null && menuManager.LeftControllerAnchor == null) return;
 
         // If the left hand is tracked we want to get the position of the skeleton
         // index finger was an arbitrary decision
-        if(GetComponent<MenuManager>().leftHand.IsTracked && GetComponent<MenuManager>().isIndexFingerPinching) {
+        if(menuManager.leftHand.IsTracked && menuManager.isIndexFingerPinching) {
             /*foreach (var b in LeftSkeleton.Bones) {
                 if (b.Id == OVRSkeleton.BoneId.Hand_IndexTip) {
                     if(state == "init") p0 = b.Transform.position.y;
@@ -38,13 +40,13 @@ public class SwipeMenu : MonoBehaviour {
                     break;
                 }
             }*/
-            if(state == "init") p0 = GetComponent<MenuManager>().leftHand.transform.position.y;
-            else p1 = GetComponent<MenuManager>().leftHand.transform.position.y;
+            if(state == "init") p0 = menuManager.leftHand.transform.position.y;
+            else p1 = menuManager.leftHand.transform.position.y;
             
         } else {
             // if the left hand isn't tracked we already accounted that this code will only run if the hand or controller is present so therefore this can only run when the controller is present
-            if(state == "init") p0 = GetComponent<MenuManager>().LeftControllerAnchor.position.y;
-            else p1 = GetComponent<MenuManager>().LeftControllerAnchor.position.y;
+            if(state == "init") p0 = menuManager.LeftControllerAnchor.position.y;
+            else p1 = menuManager.LeftControllerAnchor.position.y;
         }
     }
 
@@ -54,25 +56,25 @@ public class SwipeMenu : MonoBehaviour {
         
         // if new position differs by a vertical value and velocity greater than 15 "units" and the hand is pinching open or close the menu depending on the direction 
         // -15 means the hand went up
-        if((GetComponent<MenuManager>().leftHand != null && GetComponent<MenuManager>().leftHand.IsTracked) || (GetComponent<MenuManager>().LeftControllerAnchor != null)) {
+        if((menuManager.leftHand != null && menuManager.leftHand.IsTracked) || (menuManager.LeftControllerAnchor != null)) {
             
             // p0 is initial state and p1 is updated state
-            if(((p0 - p1) / Time.deltaTime) > 15.0 && GetComponent<MenuManager>().isIndexFingerPinching && !GetComponent<MenuManager>()._menuActive.activeSelf) {
+            if(((p0 - p1) / Time.deltaTime) > 15.0 && menuManager.isIndexFingerPinching && !menuManager._menuActive.activeSelf) {
                 playSound(open);
                 
-                GetComponent<MenuManager>()._menuActive.SetActive(true); 
+                menuManager._menuActive.SetActive(true); 
 
                 // Set position and rotation to Menu Position so that it doesn't track to the camera (when the user walks away, menu will close. It's also easier to interact with multiple panels this way -- 
                 // before when I had multiple panels it was hard to focus one or the other because turning my head to look at it would also turn the menu)
-                GetComponent<MenuManager>().PositionMenu();
+                menuManager.PositionMenu();
                 
                 // store init
                 storePosition("init");
             }
 
-            if(((p0 - p1) / Time.deltaTime) < -15.0 && GetComponent<MenuManager>().isIndexFingerPinching && GetComponent<MenuManager>()._menuActive.activeSelf) {
+            if(((p0 - p1) / Time.deltaTime) < -15.0 && menuManager.isIndexFingerPinching && menuManager._menuActive.activeSelf) {
                 playSound(close);
-                GetComponent<MenuManager>()._menuActive.SetActive(false); // Destroy(GetComponent<MenuManager>()._menuActive);
+                menuManager._menuActive.SetActive(false); // Destroy(menuManager._menuActive);
 
                 storePosition("init");
             }
@@ -83,13 +85,13 @@ public class SwipeMenu : MonoBehaviour {
         // This is so we're not always setting the initial position otherwise the player's movement would have to be impossibly quick to open the menu
         updateCounter++;
         
-        if(GetComponent<MenuManager>().leftHand.IsTracked || (GetComponent<MenuManager>().LeftControllerAnchor != null)) {
+        if(menuManager.leftHand.IsTracked || (menuManager.LeftControllerAnchor != null)) {
             // Pinching is part of the gesture to open the menu
-            GetComponent<MenuManager>().isIndexFingerPinching = GetComponent<MenuManager>().leftHand.GetFingerIsPinching(OVRHand.HandFinger.Index) || OVRInput.Get(OVRInput.RawButton.LIndexTrigger);
+            menuManager.isIndexFingerPinching = menuManager.leftHand.GetFingerIsPinching(OVRHand.HandFinger.Index) || OVRInput.Get(OVRInput.RawButton.LIndexTrigger);
         }
 
         // store init before two counts if it's not currently stored
-        if(updateCounter <= 2 && !stored && (GetComponent<MenuManager>().leftHand.IsTracked || GetComponent<MenuManager>().LeftControllerAnchor != null)) {
+        if(updateCounter <= 2 && !stored && (menuManager.leftHand.IsTracked || menuManager.LeftControllerAnchor != null)) {
             storePosition("init");
             stored = true; 
         }

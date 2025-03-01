@@ -14,6 +14,8 @@ public class Portals : MonoBehaviour {
     [SerializeField] private Material orangePortalMaterial;
     [Space]
     [SerializeField] private Vector3 inverseTransformDirection;
+
+    [HideInInspector] public Transform orangeTrans;
     
     private Camera mainCamera;
     private OVRCameraRig ovrCameraRig;
@@ -89,6 +91,10 @@ public class Portals : MonoBehaviour {
         orangePortalMaterial.mainTexture = bluePortalCamera.targetTexture;
     }
 
+    void OrangePosition() {
+        orangePortal.position = orangeTrans.position;
+    }
+
     void LateUpdate() {
         // Cache main camera transform to avoid repeated Unity API calls
         Transform mainCamTransform = mainCamera.transform;
@@ -100,5 +106,6 @@ public class Portals : MonoBehaviour {
         // Update Orange Portal Camera
         PositionPortalCamera(bluePortal, orangePortal, orangePortalCamera, mainCamTransform);
         ClampCameraPosition(orangePortal, orangePortalCamera);
+        OrangePosition();
     }
 }

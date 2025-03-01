@@ -6,8 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b3b251-b751-4cf0-b1d5-061a83cd4476" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asymmetric-Cross-Reality-Collaboration/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Universal Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Universal Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Prefabs/Portal_VR_AR.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Prefabs/Portal_VR_AR.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/NodeInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/NodeInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/Portal Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/Portal Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/Rot Locator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Demo/Runtime/Scripts/Rot Locator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Items.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Menu Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Swipe Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Hand Menu/Runtime/Scripts/Swipe Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Blue L.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Blue L.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Orange L.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Materials/Orange L.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Scripts/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erin/Portals/Assets/Scripts/Portal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Workspaces/Erkin/VisualEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Workspaces/Erkin/VisualEffects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_BurstDebugInformation_DoNotShip/tempburstlibs/arm64-v8a/lib_burst_generated.txt" beforeDir="false" afterPath="$PROJECT_DIR$/demo_BurstDebugInformation_DoNotShip/tempburstlibs/arm64-v8a/lib_burst_generated.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,25 +43,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Hanieh/Activation/2/28",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\erinj\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\erinj\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\erinj\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\erinj\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\erinj\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\erinj\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe" />
@@ -102,6 +116,7 @@
       <workItem from="1740612257895" duration="3119000" />
       <workItem from="1740684156653" duration="1801000" />
       <workItem from="1740822307476" duration="2298000" />
+      <workItem from="1740828735281" duration="4218000" />
     </task>
     <servers />
   </component>

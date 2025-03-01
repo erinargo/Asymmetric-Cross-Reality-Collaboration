@@ -92,7 +92,7 @@ public class MenuManager : MonoBehaviour {
         
         if (toggle) {
             toggle = false;
-            _menuActive = Instantiate(GetComponent<MenuManager>().menuPrefab);
+            _menuActive = Instantiate(menuPrefab);
             PositionMenu();
         }
     }
