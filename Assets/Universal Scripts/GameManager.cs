@@ -1,9 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
 public class GameManager : NetworkBehaviour {
+
+    [Serializable]
+    public class EnvFeedback {
+        [SerializeField] private GameObject MapResponse;
+        [SerializeField] private GameObject EnvironmentResponse;
+        
+        public bool Active() => MapResponse.activeSelf;
+
+        public void Activate() {
+            MapResponse.SetActive(!MapResponse.activeSelf);
+            EnvironmentResponse.SetActive(!EnvironmentResponse.activeSelf);
+        }
+    }
+
     [SerializeField] public NetworkObject playerPrefab;
     
     public static GameManager Singleton { get; private set; }
@@ -12,6 +27,7 @@ public class GameManager : NetworkBehaviour {
     public Transform minimap;
     public Transform realMap;
 
+    [HideInInspector]
     public Vector3 realOrigin;
     
     public GameObject player;
@@ -23,25 +39,35 @@ public class GameManager : NetworkBehaviour {
     
     [SerializeField] private NetworkObject networkedCamera;
     [SerializeField] private RenderTexture renderTexture;
-
+    
+    [HideInInspector]
     public int car, bus, bike;
+    [HideInInspector]
     public int solar, gas;
+    [HideInInspector]
     public int recycle;
 
-    [SerializeField] private GameObject BusHolder;
-    [SerializeField] private GameObject CarHolder;
-    [SerializeField] private GameObject BikeHolder;
-    [SerializeField] private GameObject SolarHolder;
-    [SerializeField] private GameObject RecycleHolder;
-    [SerializeField] private GameObject GasHolder;
+    [Space]
+    [SerializeField] private EnvFeedback Bus;
+    [SerializeField] private EnvFeedback Bike;
+    [SerializeField] private EnvFeedback Car;
+    [Space]
+    [SerializeField] private EnvFeedback Solar;
+    [SerializeField] private EnvFeedback Gas;
+    [Space]
+    [SerializeField] private EnvFeedback Recycle;
+    [SerializeField] private EnvFeedback Waste;
+    [Space]
 
     [SerializeField] public GameObject realMapBuildings;
     [SerializeField] public GameObject miniMapBuildings;
 
     private int processedCameras = 0;
     
+    [HideInInspector]
     public float CarbonImpact = 1.0f; // 0-1
     
+    [HideInInspector]
     public NetworkList<NetworkObjectReference> connectedCameras = new(writePerm: NetworkVariableWritePermission.Server);
     
     void Awake() {
@@ -95,16 +121,16 @@ public class GameManager : NetworkBehaviour {
 
         switch(item) {
         case MenuItems.ItemType.Bus:
-            bus = 1;
-            BusHolder.SetActive(!BusHolder.activeSelf);
+            bus = Bus.Active() ? 0 : 1; // if active then deactivate, else activate
+            Bus.Activate();
             break;
         case MenuItems.ItemType.Bike:
-            bike = 1;
-            BikeHolder.SetActive(!BikeHolder.activeSelf);
+            bike = Bike.Active() ? 0 : 1;
+            Bike.Activate();
             break;
         case MenuItems.ItemType.Car:
-            car = 1;
-            CarHolder.SetActive(!CarHolder.activeSelf);
+            car = Car.Active() ? 0 : 1; 
+            Car.Activate();
             break;
         default:
             Debug.Log("Can Not Activate invalid Item");
