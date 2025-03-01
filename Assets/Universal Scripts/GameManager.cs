@@ -31,9 +31,9 @@ public class GameManager : NetworkBehaviour {
     [SerializeField] private GameObject BusHolder;
     [SerializeField] private GameObject CarHolder;
     [SerializeField] private GameObject BikeHolder;
-    // [SerializeField] private GameObject SolarHolder;
-    // [SerializeField] private GameObject RecycleHolder;
-    // [SerializeField] private GameObject GasHolder;
+    [SerializeField] private GameObject SolarHolder;
+    [SerializeField] private GameObject RecycleHolder;
+    [SerializeField] private GameObject GasHolder;
 
     [SerializeField] public GameObject realMapBuildings;
     [SerializeField] public GameObject miniMapBuildings;
@@ -93,8 +93,7 @@ public class GameManager : NetworkBehaviour {
         // tie impact to sliders
         // toggle visibility
 
-        switch(item) 
-        {
+        switch(item) {
         case MenuItems.ItemType.Bus:
             bus = 1;
             BusHolder.SetActive(!BusHolder.activeSelf);
