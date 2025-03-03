@@ -16,7 +16,8 @@ public class MenuItems : MonoBehaviour {
     
     enum State {
         PickedUp,
-        Placed
+        Placed,
+        OnMap
     }
 
     [SerializeField] private Transform snapPoint; // Define snap points in the scene
@@ -51,6 +52,9 @@ public class MenuItems : MonoBehaviour {
 
     public void PickUp() {
         transform.parent = null;
+        
+        if (state == State.OnMap) 
+            GameManager.Singleton.Activate(item);
 
         if (item == ItemType.Bike || item == ItemType.Bus) transform.localScale = resizeVal; // maybe rework?
         state = State.PickedUp;
@@ -58,6 +62,10 @@ public class MenuItems : MonoBehaviour {
 
     public void PutDown() {
         state = State.Placed;
+        float disToMap = 
+            Vector3.Distance(gameObject.transform.position, GameManager.Singleton.minimap.transform.position);
+
+        if (disToMap <= 0.2f) state = State.OnMap;
     }
 
     public void ResizeToggle() {

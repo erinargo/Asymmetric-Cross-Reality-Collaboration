@@ -13,7 +13,7 @@ public class PortalManager : MonoBehaviour {
         else Singleton = this;
     }
     
-    public void Open(Vector3 portal1, Vector3 portal2) {
+    public void Open(Vector3 portal1, Vector3 portal2, Transform orangeTrans) {
         if(_openPortal != null) Destroy(_openPortal);
         
         _openPortal = Instantiate(_portal);
@@ -22,6 +22,8 @@ public class PortalManager : MonoBehaviour {
             if(child.name == "Orange") child.transform.position = portal2;
             if(child.name == "Blue") child.transform.position = portal1;
         }
+
+        _openPortal.GetComponent<Portals>().orangeTrans = orangeTrans;
     }
     
     public void Open(Vector3 portal1, Vector3 portal2, Quaternion portalRotation) {

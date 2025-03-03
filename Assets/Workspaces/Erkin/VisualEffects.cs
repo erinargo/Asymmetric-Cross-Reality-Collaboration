@@ -11,11 +11,6 @@ public class VisualEffects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-        foreach (GameObject tree in trees)
-        {
-            tree.SetActive(false);
-        }
     }
 
     // Update is called once per frame
