@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using Random = System.Random;
 
 public class GameManager : NetworkBehaviour {
 
@@ -20,7 +21,7 @@ public class GameManager : NetworkBehaviour {
     }
 
     [SerializeField] public NetworkObject playerPrefab;
-    
+    public List<GameObject> trees = new List<GameObject>();
     public static GameManager Singleton { get; private set; }
     public Camera mainCamera; 
     public OVRCameraRig ovrCameraRig;
@@ -40,11 +41,8 @@ public class GameManager : NetworkBehaviour {
     [SerializeField] private NetworkObject networkedCamera;
     [SerializeField] private RenderTexture renderTexture;
     
-    [HideInInspector]
     public int car, bus, bike;
-    [HideInInspector]
     public int solar, gas;
-    [HideInInspector]
     public int recycle;
 
     [Space]
@@ -66,6 +64,8 @@ public class GameManager : NetworkBehaviour {
     
     [HideInInspector]
     public float CarbonImpact = 1.0f; // 0-1
+    
+    [SerializeField] private int FogImpact = 50;
     
     [HideInInspector]
     public NetworkList<NetworkObjectReference> connectedCameras = new(writePerm: NetworkVariableWritePermission.Server);
@@ -118,27 +118,31 @@ public class GameManager : NetworkBehaviour {
         // calculate carbon impact
         // tie impact to sliders
         // toggle visibility
+        int activeTrees = trees.Count;
 
         switch(item) {
-        case MenuItems.ItemType.Bus:
-            bus = Bus.Active() ? 0 : 1; // if active then deactivate, else activate
-            Bus.Activate();
-            break;
-        case MenuItems.ItemType.Bike:
-            bike = Bike.Active() ? 0 : 1;
-            Bike.Activate();
-            break;
-        case MenuItems.ItemType.Car:
-            car = Car.Active() ? 0 : 1; 
-            Car.Activate();
-            break;
-        default:
-            Debug.Log("Can Not Activate invalid Item");
-            break;
+            case MenuItems.ItemType.Bus:
+                bus = Bus.Active() ? 0 : 1; // if active then deactivate, else activate
+                Bus.Activate();
+                break;
+            case MenuItems.ItemType.Bike:
+                bike = Bike.Active() ? 0 : 1;
+                Bike.Activate();
+                break;
+            case MenuItems.ItemType.Car:
+                car = Car.Active() ? 0 : 1; 
+                Car.Activate();
+                break;
+            default:
+                Debug.Log("Can Not Activate invalid Item");
+                break;
         }
 
-        CarbonImpact = 1.0f - ((-(car * 50) + (bus * 33) + (bike * 33) + (solar * 33) + -(gas * 50) + (recycle * 33)) / 100); 
-
+        CarbonImpact = 1.0f - ((-(car * 50f) + (bus * 33f) + (bike * 33f) + (solar * 33f) + -(gas * 50f) + (recycle * 33f)) / 100f);
+        RenderSettings.fogEndDistance = (FogImpact / CarbonImpact);
+        
+        foreach (var tree in trees) tree.SetActive(false);
+        for (int i = 0; (i < trees.Count * CarbonImpact); i++) trees[new Random().Next(0, trees.Count - 1)].SetActive(true);
     }
 
     void Update() {

@@ -92,7 +92,7 @@ public class Portals : MonoBehaviour {
     }
 
     void OrangePosition() {
-        orangePortal.position = orangeTrans.position;
+        orangePortal.position = orangeTrans.position + new Vector3(0, 1, 0);
     }
 
     void LateUpdate() {

@@ -70,7 +70,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
 
     void CalculateTrueInversePosition() {
         Vector3 relativeToCamera = mapOrigin.transform.InverseTransformPoint(GameManager.Singleton.mainCamera.transform.position);
-        relativeToCamera = Vector3.Scale(relativeToCamera, new Vector3(-1, 1, -1));
+        relativeToCamera = Vector3.Scale(relativeToCamera, new Vector3(1, 1, 1));
         _netPos.Value = realOrigin.transform.TransformPoint(relativeToCamera);
         
         Vector3 relativeRotation = mapOrigin.transform.TransformDirection(GameManager.Singleton.mainCamera.transform.forward);
@@ -102,10 +102,16 @@ public class InverseFollowPlayer : NetworkBehaviour {
     void Update() {
         if (_mapPos.Value && IsOwner) CalculateMinimapInversePosition();
         if (_truePos.Value && IsOwner) CalculateTrueInversePosition();
-        
-        transform.position = _netPos.Value;
-        transform.localScale = _netScale.Value;
-        transform.forward = _netRot.Value;
+
+        if (_mapPos.Value) {
+            transform.position = _netPos.Value;
+            transform.localScale = _netScale.Value;
+            transform.forward = _netRot.Value;
+        } else {
+            transform.position = _netPos.Value;
+            transform.localScale = _netScale.Value;
+            transform.forward = _netRot.Value;   
+        }
         
         if (!IsOwner) DrawConnections(transform, _otherPlayerPrefab.transform);
     }
