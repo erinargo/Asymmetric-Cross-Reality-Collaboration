@@ -10,7 +10,6 @@ public class MenuItems : MonoBehaviour {
         Bike,
         Car,
         Solar,
-        Gas,
         Recycle // Added new item types
     }
     
@@ -61,11 +60,11 @@ public class MenuItems : MonoBehaviour {
     }
 
     public void PutDown() {
-        state = State.Placed;
         float disToMap = 
-            Vector3.Distance(gameObject.transform.position, GameManager.Singleton.minimap.transform.position);
-
-        if (disToMap <= 0.2f) state = State.OnMap;
+            Vector3.Distance(gameObject.transform.position, GameManager.Singleton.minimap.transform.parent.transform.parent.position);
+        
+        if (disToMap <= 0.2f && state != State.PickedUp) state = State.OnMap;
+        else state = State.Placed;
     }
 
     public void ResizeToggle() {
@@ -74,7 +73,7 @@ public class MenuItems : MonoBehaviour {
 
     void Update() {
         float disToMap = 
-            Vector3.Distance(gameObject.transform.position, GameManager.Singleton.minimap.transform.position);
+            Vector3.Distance(gameObject.transform.position, GameManager.Singleton.minimap.transform.parent.transform.parent.position);
         
         float disToMenu = 
             Vector3.Distance(gameObject.transform.position, MenuManager.Singleton._menuActive.transform.position);
@@ -100,14 +99,16 @@ public class MenuItems : MonoBehaviour {
             lastSize = new Vector3(normalSizex, normalSizey, normalSizez);
         }
 
-        if (disToMap <= 0.2f && state == State.Placed && item != ItemType.Window) {
+        if (disToMap <= 0.2f && state != State.OnMap && state != State.PickedUp && item != ItemType.Window) {
+            //transform.parent = snapPoint;
+            
             transform.position = snapPoint.position;
             transform.rotation = snapPoint.rotation;
             
             GameManager.Singleton.Activate(item);
         }
 
-        if (disToMenu <= 0.2f && !resizeActive && menuActive && (item != ItemType.Bus && item != ItemType.Bike && item != ItemType.Car)) {
+        if (disToMenu <= 0.2f && !resizeActive && menuActive && (state != State.OnMap && state != State.PickedUp)) {
             gameObject.transform.parent = originalParent;
             
             gameObject.transform.localPosition = originalPosition;

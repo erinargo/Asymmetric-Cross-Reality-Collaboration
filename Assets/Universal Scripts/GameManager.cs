@@ -13,6 +13,8 @@ public class GameManager : NetworkBehaviour {
         [SerializeField] private GameObject EnvironmentResponse;
         
         public bool Active() => MapResponse.activeSelf;
+        public GameObject MapResponseObject() => MapResponse;
+        public GameObject EnvironmentResponseObject() => EnvironmentResponse;
 
         public void Activate() {
             MapResponse.SetActive(!MapResponse.activeSelf);
@@ -22,14 +24,14 @@ public class GameManager : NetworkBehaviour {
 
     [SerializeField] public NetworkObject playerPrefab;
     public List<GameObject> trees = new List<GameObject>();
+    public List<GameObject> cars = new List<GameObject>();
     public static GameManager Singleton { get; private set; }
     public Camera mainCamera; 
     public OVRCameraRig ovrCameraRig;
     public Transform minimap;
     public Transform realMap;
 
-    [HideInInspector]
-    public Vector3 realOrigin;
+    public Transform realOrigin;
     
     public GameObject player;
 
@@ -41,21 +43,26 @@ public class GameManager : NetworkBehaviour {
     [SerializeField] private NetworkObject networkedCamera;
     [SerializeField] private RenderTexture renderTexture;
     
-    public int car, bus, bike;
-    public int solar, gas;
-    public int recycle;
+    [HideInInspector]
+    public NetworkVariable<int> car = new(writePerm: NetworkVariableWritePermission.Server), 
+        bus = new(writePerm: NetworkVariableWritePermission.Server), 
+        bike = new(writePerm: NetworkVariableWritePermission.Server);
+    [HideInInspector]
+    public NetworkVariable<int> solar = new(writePerm: NetworkVariableWritePermission.Server), 
+        gas = new(writePerm: NetworkVariableWritePermission.Server);
+    [HideInInspector]
+    public NetworkVariable<int> recycle = new(writePerm: NetworkVariableWritePermission.Server);
 
     [Space]
     [SerializeField] private EnvFeedback Bus;
     [SerializeField] private EnvFeedback Bike;
-    [SerializeField] private EnvFeedback Car;
     [Space]
     [SerializeField] private EnvFeedback Solar;
-    [SerializeField] private EnvFeedback Gas;
     [Space]
     [SerializeField] private EnvFeedback Recycle;
-    [SerializeField] private EnvFeedback Waste;
     [Space]
+    [SerializeField] private GameObject PowerPlant;
+    [SerializeField] private GameObject Trash;
 
     [SerializeField] public GameObject realMapBuildings;
     [SerializeField] public GameObject miniMapBuildings;
@@ -66,6 +73,8 @@ public class GameManager : NetworkBehaviour {
     public float CarbonImpact = 1.0f; // 0-1
     
     [SerializeField] private int FogImpact = 50;
+
+    private NetworkVariable<bool> activateRequested = new(writePerm: NetworkVariableWritePermission.Server);
     
     [HideInInspector]
     public NetworkList<NetworkObjectReference> connectedCameras = new(writePerm: NetworkVariableWritePermission.Server);
@@ -114,46 +123,88 @@ public class GameManager : NetworkBehaviour {
         SpawnCameraServerRpc(NetworkManager.Singleton.LocalClientId);
     }
 
-    public void Activate(MenuItems.ItemType item) {
-        // calculate carbon impact
-        // tie impact to sliders
-        // toggle visibility
-        int activeTrees = trees.Count;
 
+    [ServerRpc(RequireOwnership = false)]
+    public void ActivateServerRpc(MenuItems.ItemType item, ServerRpcParams serverRpcParams = default) {
         switch(item) {
             case MenuItems.ItemType.Bus:
-                bus = Bus.Active() ? 0 : 1; // if active then deactivate, else activate
-                Bus.Activate();
+                bus.Value = Bus.Active() ? 0 : 1;
                 break;
             case MenuItems.ItemType.Bike:
-                bike = Bike.Active() ? 0 : 1;
-                Bike.Activate();
+                bike.Value = Bike.Active() ? 0 : 1;
                 break;
-            case MenuItems.ItemType.Car:
-                car = Car.Active() ? 0 : 1; 
-                Car.Activate();
+            case MenuItems.ItemType.Solar:
+                solar.Value = Solar.Active() ? 0 : 1;
+                break;
+            case MenuItems.ItemType.Recycle:
+                recycle.Value = Recycle.Active() ? 0 : 1;
                 break;
             default:
                 Debug.Log("Can Not Activate invalid Item");
-                break;
+                return;
         }
 
-        CarbonImpact = 1.0f - ((-(car * 50f) + (bus * 33f) + (bike * 33f) + (solar * 33f) + -(gas * 50f) + (recycle * 33f)) / 100f);
-        RenderSettings.fogEndDistance = (FogImpact / CarbonImpact);
-        
-        foreach (var tree in trees) tree.SetActive(false);
-        for (int i = 0; (i < trees.Count * CarbonImpact); i++) trees[new Random().Next(0, trees.Count - 1)].SetActive(true);
+        // Notify the client that the server operation is complete
+        ActivateCompletedClientRpc(item);
     }
 
-    void Update() {
-        if (processedCameras == connectedCameras.Count) return;
-        if (connectedCameras[processedCameras].TryGet(out NetworkObject cameraObject)) {
-            processedCameras++;
-            if(cameraObject.IsOwner) cameraObject.GetComponent<Camera>().targetDisplay = 10;
-            else cameraObject.GetComponent<Camera>().targetTexture = renderTexture;
+    [ClientRpc]
+    private void ActivateCompletedClientRpc(MenuItems.ItemType item) {
+        // Continue the activation process after the server has completed the update
+        ContinueActivation(item);
+    }
+
+
+    public void Activate(MenuItems.ItemType item) {
+        ActivateServerRpc(item);
+    }
+
+    private void ContinueActivation(MenuItems.ItemType item) {
+        switch(item) {
+            case MenuItems.ItemType.Bus:
+                Bus.Activate();
+                break;
+            case MenuItems.ItemType.Bike:
+                Bike.Activate();
+                break;
+            case MenuItems.ItemType.Solar:
+                Solar.Activate();
+                PowerPlant.SetActive(!Solar.Active());
+                break;
+            case MenuItems.ItemType.Recycle:
+                Recycle.Activate();
+                Trash.SetActive(!Recycle.Active());
+                break;
+            default:
+                Debug.Log("Can Not Activate invalid Item");
+                return;
         }
-        //foreach (var camera in connectedCameras) {
-        //}
+
+        CarbonImpact = 1.0f - ((-(car.Value * 50f) + (bus.Value * 33f) + (bike.Value * 33f) + (solar.Value * 33f) + -(gas.Value * 50f) + (recycle.Value * 33f)) / 100f);
+        RenderSettings.fogEndDistance = (FogImpact / CarbonImpact);
+
+        foreach (var tree in trees) tree.SetActive(false);
+        foreach (var car in cars) car.SetActive(true);
+
+        for (int i = 0; (i < trees.Count * CarbonImpact); i++) trees[UnityEngine.Random.Range(0, trees.Count - 1)].SetActive(true);
+        for (int i = 0; (i < cars.Count * CarbonImpact); i++) trees[UnityEngine.Random.Range(0, cars.Count - 1)].SetActive(false);
+    }
+
+
+    void Update() {
+        //if (Recycle.Active()) Recycle.MapResponseObject().transform.Rotate(new Vector3(0, 0, 50) * Time.deltaTime);
+        #if UNITY_EDITOR
+            Debug.unityLogger.logEnabled = true;
+        #else
+            Debug.unityLogger.logEnabled = false;
+        #endif
+        
+        foreach (var camera in connectedCameras) {
+            if (camera.TryGet(out NetworkObject cameraObject)) {
+                if(cameraObject.IsOwner) cameraObject.GetComponent<Camera>().targetDisplay = 10;
+                else cameraObject.GetComponent<Camera>().targetTexture = renderTexture;
+            }
+        }
     }
     
     private void OnDestroy() {

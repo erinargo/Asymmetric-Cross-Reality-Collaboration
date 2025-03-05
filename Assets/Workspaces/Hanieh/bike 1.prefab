@@ -873,7 +873,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7495762922409809478}
-  - component: {fileID: 8932761581482448238}
   m_Layer: 0
   m_Name: bike 1
   m_TagString: Untagged
@@ -905,20 +904,6 @@ Transform:
   - {fileID: 1086836983696120780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8932761581482448238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6901868298190030418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328ca3368b3a8ee4a91b3f8dd318c8ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  planePrefab: {fileID: 4989391573999450676}
-  blinkInterval: 0.5
 --- !u!1 &7016649390061362832
 GameObject:
   m_ObjectHideFlags: 0

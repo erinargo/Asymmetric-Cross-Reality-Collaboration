@@ -33,12 +33,14 @@ public class InverseFollowPlayer : NetworkBehaviour {
             _otherPlayerPrefab = other;
         }
 
-        if (_truePos.Value) {
+        if (_truePos.Value && IsOwner) {
             mapOrigin = new GameObject("originPos");
             mapOrigin.transform.position = GameManager.Singleton.mainCamera.transform.position;
+            mapOrigin.transform.rotation = GameManager.Singleton.mainCamera.transform.rotation;
 
             realOrigin = new GameObject("originPos");
-            realOrigin.transform.position = GameManager.Singleton.realOrigin;
+            realOrigin.transform.position = GameManager.Singleton.realOrigin.transform.position;
+            realOrigin.transform.rotation = GameManager.Singleton.realOrigin.transform.rotation;
         }
 
         if (IsOwner) _netScale.Value = new Vector3(1, 1, 1);
@@ -62,8 +64,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
         float minimapScale = GetMinimapScale();
         Vector3 relativeToCamera = realMap.transform.InverseTransformPoint(GameManager.Singleton.mainCamera.transform.position);
         relativeToCamera *= minimapScale;
-        Vector3 minimapPosition = minimap.transform.TransformPoint(relativeToCamera);
-        _netPos.Value = new Vector3(minimapPosition.x, minimap.position.y, minimapPosition.z);
+        _netPos.Value = relativeToCamera;
         _netScale.Value = new Vector3(0.01f, 0.01f, 0.01f);
         DrawConnections(transform, _otherPlayerPrefab.transform);
     }
@@ -76,6 +77,8 @@ public class InverseFollowPlayer : NetworkBehaviour {
         Vector3 relativeRotation = mapOrigin.transform.TransformDirection(GameManager.Singleton.mainCamera.transform.forward);
         relativeRotation = Vector3.Scale(relativeRotation, new Vector3(1, 1, 1));
         _netRot.Value = realOrigin.transform.TransformDirection(relativeRotation);
+        
+        _netScale.Value = new Vector3(0.01f, 0.01f, 0.01f);
     }
 
     void DrawConnections(Transform start, Transform end) {       
@@ -104,13 +107,16 @@ public class InverseFollowPlayer : NetworkBehaviour {
         if (_truePos.Value && IsOwner) CalculateTrueInversePosition();
 
         if (_mapPos.Value) {
-            transform.position = _netPos.Value;
-            transform.localScale = _netScale.Value;
-            transform.forward = _netRot.Value;
+            Vector3 minimapPosition = minimap.transform.position + _netPos.Value;
+            transform.position = new Vector3(minimapPosition.x, minimap.position.y, minimapPosition.z);
+            
+            transform.forward = _netRot.Value;  
+            transform.localScale = _netScale.Value; 
         } else {
-            transform.position = _netPos.Value;
-            transform.localScale = _netScale.Value;
-            transform.forward = _netRot.Value;   
+            transform.position = _netPos.Value + new Vector3(-0.5f, 0, -0.5f);
+            transform.localScale = _netScale.Value; 
+            
+            GetComponent<MeshRenderer>().enabled = false;
         }
         
         if (!IsOwner) DrawConnections(transform, _otherPlayerPrefab.transform);

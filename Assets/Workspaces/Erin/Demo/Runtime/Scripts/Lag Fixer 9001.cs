@@ -8,8 +8,8 @@ public class LagFixer9001 : MonoBehaviour {
     // Doesn't work onStart 
     void LateUpdate() {
         if (!hasFixed) {
-            foreach (var child in GetComponentsInChildren<Transform>(true)) 
-                if(child.gameObject.name == "B U I L D I N G S") child.gameObject.SetActive(true);
+            foreach (var child in GetComponentsInChildren<MenuItems>(true)) 
+                child.gameObject.SetActive(true);
             
             hasFixed = true;
         }
