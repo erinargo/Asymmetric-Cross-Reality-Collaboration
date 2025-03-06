@@ -113,7 +113,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
             transform.forward = _netRot.Value;  
             transform.localScale = _netScale.Value; 
         } else {
-            transform.position = _netPos.Value + new Vector3(-0.5f, 0, -0.5f);
+            transform.position = _netPos.Value;
             transform.localScale = _netScale.Value; 
             
             GetComponent<MeshRenderer>().enabled = false;

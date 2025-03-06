@@ -44,24 +44,24 @@ public class MenuItems : MonoBehaviour {
 
         originalPosition = gameObject.transform.localPosition;
         originalRotation = gameObject.transform.localRotation;
-        originalParent = transform.parent;
+        originalParent = transform.parent.transform.parent;
 
         state = State.Placed;
     }
 
     public void PickUp() {
-        transform.parent = null;
+        transform.parent.transform.parent = null;
         
         if (state == State.OnMap) 
             GameManager.Singleton.Activate(item);
 
-        if (item == ItemType.Bike || item == ItemType.Bus) transform.localScale = resizeVal; // maybe rework?
-        state = State.PickedUp;
+        //if (item == ItemType.Bike || item == ItemType.Bus) transform.localScale = resizeVal; // maybe rework?
+        //state = State.PickedUp;
     }
 
     public void PutDown() {
         float disToMap = 
-            Vector3.Distance(gameObject.transform.position, GameManager.Singleton.minimap.transform.parent.transform.parent.position);
+            Vector3.Distance(gameObject.transform.parent.transform.position, GameManager.Singleton.minimap.transform.parent.transform.parent.position);
         
         if (disToMap <= 0.2f && state != State.PickedUp) state = State.OnMap;
         else state = State.Placed;
@@ -73,10 +73,10 @@ public class MenuItems : MonoBehaviour {
 
     void Update() {
         float disToMap = 
-            Vector3.Distance(gameObject.transform.position, GameManager.Singleton.minimap.transform.parent.transform.parent.position);
+            Vector3.Distance(gameObject.transform.parent.transform.position, GameManager.Singleton.minimap.transform.parent.transform.parent.position);
         
         float disToMenu = 
-            Vector3.Distance(gameObject.transform.position, MenuManager.Singleton._menuActive.transform.position);
+            Vector3.Distance(gameObject.transform.parent.transform.position, MenuManager.Singleton._menuActive.transform.parent.transform.position);
 
         bool menuActive = MenuManager.Singleton._menuActive.activeSelf;
         
@@ -102,17 +102,22 @@ public class MenuItems : MonoBehaviour {
         if (disToMap <= 0.2f && state != State.OnMap && state != State.PickedUp && item != ItemType.Window) {
             //transform.parent = snapPoint;
             
-            transform.position = snapPoint.position;
-            transform.rotation = snapPoint.rotation;
+            transform.parent.position = snapPoint.position;
+            transform.parent.rotation = snapPoint.rotation;
             
             GameManager.Singleton.Activate(item);
         }
 
+        if (state == State.OnMap) {
+            transform.parent.position = snapPoint.position;
+            transform.parent.rotation = snapPoint.rotation;
+        }
+
         if (disToMenu <= 0.2f && !resizeActive && menuActive && (state != State.OnMap && state != State.PickedUp)) {
-            gameObject.transform.parent = originalParent;
+            gameObject.transform.parent.transform.parent = originalParent;
             
-            gameObject.transform.localPosition = originalPosition;
-            gameObject.transform.localRotation = originalRotation;
+            gameObject.transform.parent.transform.localPosition = originalPosition;
+            gameObject.transform.parent.transform.localRotation = originalRotation;
             lastSize = minSize;
         } // transform.parent = originalPosition; // reparent
     }
