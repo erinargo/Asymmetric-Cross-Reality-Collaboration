@@ -71,7 +71,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
 
     void CalculateTrueInversePosition() {
         Vector3 relativeToCamera = mapOrigin.transform.InverseTransformPoint(GameManager.Singleton.mainCamera.transform.position);
-        relativeToCamera = Vector3.Scale(relativeToCamera, new Vector3(1, 1, 1));
+        relativeToCamera = Vector3.Scale(relativeToCamera, new Vector3(-1, 1, -1));
         _netPos.Value = realOrigin.transform.TransformPoint(relativeToCamera);
         
         Vector3 relativeRotation = mapOrigin.transform.TransformDirection(GameManager.Singleton.mainCamera.transform.forward);
