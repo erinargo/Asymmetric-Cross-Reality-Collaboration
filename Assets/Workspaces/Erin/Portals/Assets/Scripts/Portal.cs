@@ -59,7 +59,7 @@ public class Portals : MonoBehaviour {
         thisPortalCamera.transform.position = portal.TransformPoint(relativePosOtherPortal);
 
         Vector3 relativeRotationToOtherPortal = portal.InverseTransformDirection(mainCamTransform.forward);
-        relativeRotationToOtherPortal = Vector3.Scale(relativeRotationToOtherPortal, inverseTransformDirection);
+        relativeRotationToOtherPortal = Vector3.Scale(relativeRotationToOtherPortal, new Vector3(-1, -1, 1));
         thisPortalCamera.transform.forward = otherPortal.TransformDirection(relativeRotationToOtherPortal);
 
         thisPortalCamera.transform.rotation *= adjustedRotation;
@@ -106,6 +106,6 @@ public class Portals : MonoBehaviour {
         // Update Orange Portal Camera
         PositionPortalCamera(bluePortal, orangePortal, orangePortalCamera, mainCamTransform);
         ClampCameraPosition(orangePortal, orangePortalCamera);
-        OrangePosition();
+        //OrangePosition();
     }
 }

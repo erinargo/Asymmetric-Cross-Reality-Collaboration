@@ -27,7 +27,7 @@ public class MenuItems : MonoBehaviour {
     [SerializeField] private float ResizeMultiplier;
 
     [SerializeField] private Vector3 maxSize;
-    private Vector3 minSize;
+    private Vector3 originalSize;
     private Vector3 lastSize;
 
     private Vector3 originalPosition;
@@ -39,8 +39,8 @@ public class MenuItems : MonoBehaviour {
     private State state;
     
     void Awake() {
-        minSize = gameObject.transform.localScale;
-        lastSize = minSize;
+        originalSize = gameObject.transform.localScale;
+        lastSize = originalSize;
 
         originalPosition = gameObject.transform.localPosition;
         originalRotation = gameObject.transform.localRotation;
@@ -91,11 +91,11 @@ public class MenuItems : MonoBehaviour {
             Debug.Log(size);
 
             float normalSizex = 
-                Mathf.Clamp((size * size) * gameObject.transform.localScale.x, minSize.x, maxSize.x);
+                Mathf.Clamp((size * size) * gameObject.transform.localScale.x, originalSize.x, maxSize.x);
             float normalSizey = 
-                Mathf.Clamp((size * size) * gameObject.transform.localScale.y, minSize.y, maxSize.y);
+                Mathf.Clamp((size * size) * gameObject.transform.localScale.y, originalSize.y, maxSize.y);
             float normalSizez = 
-                Mathf.Clamp((size * size) * gameObject.transform.localScale.z, minSize.z, maxSize.z);
+                Mathf.Clamp((size * size) * gameObject.transform.localScale.z, originalSize.z, maxSize.z);
 
             lastSize = new Vector3(normalSizex, normalSizey, normalSizez);
         }
@@ -126,7 +126,10 @@ public class MenuItems : MonoBehaviour {
             
             gameObject.transform.parent.transform.localPosition = originalPosition;
             gameObject.transform.parent.transform.localRotation = originalRotation;
-            lastSize = minSize;
+
+            gameObject.transform.localScale = originalSize;
+            
+            lastSize = originalSize;
         } // transform.parent = originalPosition; // reparent
     }
 

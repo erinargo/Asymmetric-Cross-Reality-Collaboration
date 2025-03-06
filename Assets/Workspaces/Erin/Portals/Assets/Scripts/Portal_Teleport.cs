@@ -29,21 +29,25 @@ public class Portal_Teleport : MonoBehaviour {
         GameManager.Singleton.realOrigin.position = camera.position;
         GameManager.Singleton.realOrigin.rotation = camera.rotation;
         
-        if (AR_VR) PassthroughManager.Singleton.Toggle();
+        var trueTeleportPosition = PassthroughManager.Singleton.passthroughOn ? transform.position : _playerOrigin.position;
+        
+        // if(PassthroughManager.Singleton.passthroughOn) 
 
         var translatedPosition = new Vector3(
-            transform.position.x, 
+            transform.position.x - 1.5f, 
             _playerOrigin.transform.position.y, 
-            transform.position.z
+            transform.position.z - 1.5f
             );
-
+        
+        if (AR_VR) PassthroughManager.Singleton.Toggle();
+        
         _playerOrigin.position = translatedPosition;
         
-        _playerOrigin.rotation = Quaternion.Euler(
+        /*_playerOrigin.rotation = Quaternion.Euler(
             _playerOrigin.rotation.eulerAngles.x,
             _playerOrigin.rotation.eulerAngles.y + (camera.rotation.eulerAngles.y - transform.rotation.eulerAngles.y),
             _playerOrigin.rotation.eulerAngles.z
-        );
+        );*/
     }
 
     void Update() {
