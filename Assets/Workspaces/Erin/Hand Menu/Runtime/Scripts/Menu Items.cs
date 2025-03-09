@@ -100,7 +100,16 @@ public class MenuItems : MonoBehaviour {
             lastSize = new Vector3(normalSizex, normalSizey, normalSizez);
         }
 
-        if (disToMap <= 0.2f && state != State.OnMap && state != State.PickedUp && item != ItemType.Window) {
+        if ((disToMap <= 0.2f && state != State.OnMap && state != State.PickedUp && item != ItemType.Window) || 
+                (
+                    ( // detect if already active
+                        (item == ItemType.Bike && GameManager.Singleton.bike.Value == 1) || 
+                        (item == ItemType.Bus && GameManager.Singleton.bus.Value == 1) || 
+                        (item == ItemType.Solar && GameManager.Singleton.solar.Value == 1) ||
+                        (item == ItemType.Recycle && GameManager.Singleton.recycle.Value == 1)
+                    ) && (state != State.OnMap && state != State.PickedUp)
+                )
+            ) {
             //transform.parent = snapPoint;
             state = State.OnMap;
             

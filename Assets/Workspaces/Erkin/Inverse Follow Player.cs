@@ -15,7 +15,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
 
     private NetworkVariable<Vector3> _netPos = new(writePerm: NetworkVariableWritePermission.Owner);
     private NetworkVariable<Vector3> _netScale = new(writePerm: NetworkVariableWritePermission.Owner);
-    private NetworkVariable<Vector3> _netRot = new(writePerm: NetworkVariableWritePermission.Owner);
+    private NetworkVariable<Quaternion> _netRot = new(writePerm: NetworkVariableWritePermission.Owner);
     
     private InverseFollowPlayer _otherPlayerPrefab;
 
@@ -24,9 +24,16 @@ public class InverseFollowPlayer : NetworkBehaviour {
     private GameObject mapOrigin;
     private GameObject realOrigin;
     
+    NetworkVariable<Vector3> realPos = new(writePerm: NetworkVariableWritePermission.Server);
+    NetworkVariable<Quaternion> realRot = new(writePerm: NetworkVariableWritePermission.Server);
+    NetworkVariable<Vector3> mapPos = new(writePerm: NetworkVariableWritePermission.Server);
+    NetworkVariable<Quaternion> mapRot = new(writePerm: NetworkVariableWritePermission.Server);
+    
     void Start() {
         minimap = GameManager.Singleton.minimap;
         realMap = GameManager.Singleton.realMap;
+        
+        minimap.transform.rotation = realMap.transform.rotation;
 
         foreach (var other in GameObject.FindObjectsOfType<InverseFollowPlayer>()) {
             if (other == this) continue;
@@ -71,12 +78,13 @@ public class InverseFollowPlayer : NetworkBehaviour {
 
     void CalculateTrueInversePosition() {
         Vector3 relativeToCamera = mapOrigin.transform.InverseTransformPoint(GameManager.Singleton.mainCamera.transform.position);
-        relativeToCamera = Vector3.Scale(relativeToCamera, new Vector3(-1, 1, -1));
+        relativeToCamera = Vector3.Scale(relativeToCamera, new Vector3(1, 1, 1));
         _netPos.Value = realOrigin.transform.TransformPoint(relativeToCamera);
         
-        Vector3 relativeRotation = mapOrigin.transform.TransformDirection(GameManager.Singleton.mainCamera.transform.forward);
-        relativeRotation = Vector3.Scale(relativeRotation, new Vector3(1, 1, 1));
-        _netRot.Value = realOrigin.transform.TransformDirection(relativeRotation);
+        Quaternion mapRotation = mapOrigin.transform.rotation;
+        Quaternion realRotation = realOrigin.transform.rotation;
+
+        _netRot.Value = Quaternion.Inverse(mapRotation) * realRotation;
         
         _netScale.Value = new Vector3(0.01f, 0.01f, 0.01f);
     }
@@ -110,7 +118,7 @@ public class InverseFollowPlayer : NetworkBehaviour {
             Vector3 minimapPosition = minimap.transform.position + _netPos.Value;
             transform.position = new Vector3(minimapPosition.x, minimap.position.y, minimapPosition.z);
             
-            transform.forward = _netRot.Value;  
+            transform.rotation = _netRot.Value;
             transform.localScale = _netScale.Value; 
         } else {
             transform.position = _netPos.Value;
@@ -120,6 +128,13 @@ public class InverseFollowPlayer : NetworkBehaviour {
         }
         
         if (!IsOwner) DrawConnections(transform, _otherPlayerPrefab.transform);
+
+        if (IsOwner) {
+            mapPos.Value = minimap.transform.position;
+            mapRot.Value = minimap.transform.rotation;
+        }
+
+        if (_mapPos.Value) return;
     }
     
 }

@@ -180,7 +180,7 @@ public class GameManager : NetworkBehaviour {
                 return;
         }
 
-        CarbonImpact = 1.0f - ((-(car.Value * 50f) + (bus.Value * 33f) + (bike.Value * 33f) + (solar.Value * 33f) + -(gas.Value * 50f) + (recycle.Value * 33f)) / 100f);
+        CarbonImpact = 1.0f - ((bus.Value * 0.25f) + (bike.Value * 0.25f) + (solar.Value * 0.25f) + (recycle.Value * 0.25f));
         RenderSettings.fogEndDistance = (FogImpact / CarbonImpact);
 
         foreach (var tree in trees) tree.SetActive(false);
