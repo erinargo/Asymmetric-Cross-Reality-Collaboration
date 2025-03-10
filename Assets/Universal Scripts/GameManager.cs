@@ -72,7 +72,7 @@ public class GameManager : NetworkBehaviour {
     [HideInInspector]
     public float CarbonImpact = 1.0f; // 0-1
     
-    [SerializeField] private int FogImpact = 50;
+    [SerializeField] private float FogImpact = 50f;
 
     private NetworkVariable<bool> activateRequested = new(writePerm: NetworkVariableWritePermission.Server);
     
@@ -180,7 +180,7 @@ public class GameManager : NetworkBehaviour {
                 return;
         }
 
-        CarbonImpact = 1.0f - ((bus.Value * 0.25f) + (bike.Value * 0.25f) + (solar.Value * 0.25f) + (recycle.Value * 0.25f));
+        CarbonImpact = (1.0f - ((bus.Value * 0.2f) + (bike.Value * 0.25f) + (solar.Value * 0.25f) + (recycle.Value * 0.25f)));
         RenderSettings.fogEndDistance = (FogImpact / CarbonImpact);
 
         foreach (var tree in trees) tree.SetActive(false);

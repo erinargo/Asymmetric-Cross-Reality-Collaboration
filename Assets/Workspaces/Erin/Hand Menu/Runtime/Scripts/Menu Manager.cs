@@ -34,6 +34,8 @@ public class MenuManager : MonoBehaviour {
     [Space]
     [SerializeField] private bool _invert;
 
+    private Transform originalParent;
+
     void Awake() { // Expensive but only once. 
         leftHand = 
             OVRManager.instance.gameObject.GetComponentsInChildren<OVRHand>()
@@ -55,6 +57,8 @@ public class MenuManager : MonoBehaviour {
         
         if (Singleton != null && Singleton != this) Destroy(this.gameObject);
         else Singleton = this;
+
+        originalParent = _menuActive.transform.parent;
     }
 
     bool IsLookingAway() {
@@ -87,7 +91,10 @@ public class MenuManager : MonoBehaviour {
     void Update() {
         if(isIndexFingerPinching) IsFollow = true;
         else IsFollow = false;
-        
+
+        if (_menuActive.activeSelf) _menuActive.transform.parent = null;
+        else _menuActive.transform.parent = originalParent;
+
         if (_menuActive.activeSelf && IsFollow) PositionMenu();
         
         if (toggle) {
