@@ -34,9 +34,9 @@ public class Portal_Teleport : MonoBehaviour {
         // if(PassthroughManager.Singleton.passthroughOn) 
 
         var translatedPosition = new Vector3(
-            transform.position.x - 1.8f, 
+            transform.position.x - 1.2f, 
             _playerOrigin.transform.position.y, 
-            transform.position.z - 1.8f
+            transform.position.z - 1.2f
             );
         
         if (AR_VR) PassthroughManager.Singleton.Toggle();
@@ -52,7 +52,7 @@ public class Portal_Teleport : MonoBehaviour {
 
     void Update() {
         float distance = Vector3.Distance(camera.position, _otherPortal.position);
-        if (distance <= 0.4f && canTeleport) Teleport();
+        if (distance <= 0.8f && canTeleport) Teleport();
 
         if (distance >= 1f) canTeleport = true;
     }
